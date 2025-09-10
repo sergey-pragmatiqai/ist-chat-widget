@@ -1,0 +1,70 @@
+{
+  "name": "@n8n/chat",
+  "version": "0.46.0",
+  "scripts": {
+    "dev": "vite dev --config vite.dev.config.ts",
+    "dev:storybook": "pnpm run storybook",
+    "build": "pnpm build:vite && pnpm build:bundle",
+    "build:vite": "cross-env vite build",
+    "build:bundle": "cross-env INCLUDE_VUE=true vite build",
+    "preview": "vite preview",
+    "test:dev": "vitest",
+    "test": "vitest run",
+    "typecheck": "vue-tsc --noEmit",
+    "lint": "eslint src --quiet",
+    "lintfix": "eslint src --fix",
+    "format": "biome format --write src .storybook && prettier --write src/ --ignore-path ../../../../.prettierignore",
+    "format:check": "biome ci src .storybook && prettier --check src/ --ignore-path ../../../../.prettierignore",
+    "storybook": "storybook dev -p 6006 --no-open",
+    "build:storybook": "storybook build"
+  },
+  "types": "./dist/index.d.ts",
+  "main": "./dist/chat.umd.js",
+  "module": "./dist/chat.es.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/chat.es.js",
+      "require": "./dist/chat.umd.js"
+    },
+    "./style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    },
+    "./*": {
+      "import": "./*",
+      "require": "./*"
+    }
+  },
+  "dependencies": {
+    "@vueuse/core": "catalog:frontend",
+    "highlight.js": "catalog:frontend",
+    "markdown-it-link-attributes": "^4.0.1",
+    "uuid": "catalog:",
+    "vue": "catalog:frontend",
+    "vue-markdown-render": "catalog:frontend"
+  },
+  "devDependencies": {
+    "@iconify-json/lucide": "^1.2.66",
+    "@iconify-json/mdi": "^1.1.54",
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/addon-interactions": "^8.6.14",
+    "@storybook/test-runner": "^0.23.0",
+    "@storybook/vue3": "^9.1.5",
+    "@storybook/vue3-webpack5": "^8.6.14",
+    "@vitejs/plugin-vue": "catalog:frontend",
+    "@vitest/coverage-v8": "catalog:",
+    "sass": "catalog:",
+    "storybook": "^8.6.14",
+    "unplugin-icons": "^0.19.0",
+    "unplugin-vue-components": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-dts": "^4.5.3",
+    "vitest": "catalog:",
+    "vue-tsc": "catalog:frontend"
+  },
+  "files": [
+    "README.md",
+    "dist"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "n8n-chat-standalone",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.15",
+    "pnpm": ">=10.2.1"
+  },
+  "packageManager": "pnpm@10.12.1",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel --env-mode=loose",
+    "typecheck": "turbo typecheck",
+    "clean": "turbo run clean --parallel",
+    "format": "turbo run format",
+    "format:check": "turbo run format:check",
+    "lint": "turbo run lint",
+    "lintfix": "turbo run lintfix",
+    "test": "turbo run test"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.0",
+    "@types/node": "*",
+    "cross-env": "^7.0.3",
+    "turbo": "2.5.4",
+    "typescript": "5.8.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/node": "^20.17.50",
+      "chokidar": "^4.0.1",
+      "esbuild": "^0.24.0",
+      "tslib": "^2.6.2",
+      "typescript": "5.8.3",
+      "vue-tsc": "^2.2.8"
+    }
+  }
+}
