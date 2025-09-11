@@ -85,6 +85,7 @@ export default defineConfig({
 				entry: resolve(__dirname, 'src', 'index.ts'),
 				name: 'N8nChat',
 				fileName: (format) => (includeVue ? `chat.bundle.${format}.js` : `chat.${format}.js`),
+				formats: ['es', 'umd'],
 			},
 			rollupOptions: {
 				// make sure to externalize deps that shouldn't be bundled
@@ -102,6 +103,13 @@ export default defineConfig({
 								vue: 'Vue',
 							},
 				},
+			},
+		},
+		server: {
+			headers: {
+				'Access-Control-Allow-Origin': '*',
+				'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+				'Access-Control-Allow-Headers': 'Content-Type, Authorization',
 			},
 		},
 	test: {
