@@ -13,6 +13,7 @@ export const defaultOptions: ChatOptions = {
 	chatSessionKey: 'sessionId',
 	defaultLanguage: 'en',
 	showWelcomeScreen: false,
+	showPoweredBy: true,
 	initialMessages: ['Hi there! 👋', 'My name is Nathan. How can I assist you today?'],
 	welcomeMessage: {
 		enabled: false,

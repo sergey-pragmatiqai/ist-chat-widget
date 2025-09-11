@@ -3,7 +3,7 @@
 	--chat--color-primary: #109782;
 	--chat--color-primary-shade-50: #0e8a73;
 	--chat--color-primary-shade-100: #0c7b64;
-	--chat--color-secondary: #28587B;
+	--chat--color-secondary: #109782;
 	--chat--color-secondary-shade-50: #224a69;
 	--chat--color-white: #ffffff;
 	--chat--color-light: #f2f4f8;
@@ -118,7 +118,7 @@
 
 	/* Send and File Buttons */
 	--chat--input--send--button--background: var(--chat--color-white);
-	--chat--input--send--button--color: var(--chat--color-light);
+	--chat--input--send--button--color: var(--chat--color-primary);
 	--chat--input--send--button--background-hover: var(--chat--color-primary-shade-50);
 	--chat--input--send--button--color-hover: var(--chat--color-secondary-shade-50);
 	--chat--input--file--button--background: var(--chat--color-white);
@@ -138,7 +138,8 @@
 	--chat--input--elevenlabs--button--color: var(--chat--color-white);
 	--chat--input--elevenlabs--button--background-hover: var(--chat--color-primary-shade-50);
 	--chat--input--elevenlabs--button--color-hover: var(--chat--color-white);
-	--chat--input--elevenlabs--button--background-disabled: var(--chat--color-disabled);
+	--chat--input--elevenlabs--button--background-disabled: var(--chat--color-light-shade-50);
+	--chat--input--elevenlabs--button--color-disabled: var(--chat--color-disabled);
 	--chat--input--elevenlabs--button--border-radius: var(--chat--border-radius);
 	--chat--input--elevenlabs--button--focus-color: var(--chat--color-primary);
 

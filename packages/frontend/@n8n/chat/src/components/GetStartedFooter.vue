@@ -1,15 +1,16 @@
 <script setup lang="ts">
 import PoweredBy from '@n8n/chat/components/PoweredBy.vue';
-import { useI18n } from '@n8n/chat/composables';
+import { useI18n, useOptions } from '@n8n/chat/composables';
 
 const { t, te } = useI18n();
+const { options } = useOptions();
 </script>
 <template>
 	<div class="chat-get-started-footer">
 		<div v-if="te('footer')">
 			{{ t('footer') }}
 		</div>
-		<PoweredBy />
+		<PoweredBy v-if="options.showPoweredBy" />
 	</div>
 </template>
 

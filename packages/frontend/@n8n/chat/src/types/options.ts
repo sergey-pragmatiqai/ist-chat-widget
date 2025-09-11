@@ -133,6 +133,7 @@ export interface ChatTheme {
 	elevenLabsButtonBackgroundHover?: string;
 	elevenLabsButtonColorHover?: string;
 	elevenLabsButtonBackgroundDisabled?: string;
+	elevenLabsButtonColorDisabled?: string;
 	elevenLabsButtonBorderRadius?: string;
 	elevenLabsButtonFocusColor?: string;
 	
@@ -238,6 +239,7 @@ export interface ChatOptions {
 	allowedFilesMimeTypes?: Ref<string> | string;
 	elevenLabsAgentUrl?: string;
 	showElevenLabsButton?: boolean;
+	showPoweredBy?: boolean;
 	welcomeMessage?: {
 		enabled?: boolean;
 		text?: string;

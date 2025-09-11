@@ -79,7 +79,7 @@ function openElevenLabsAgent(): void {
 
 	&[disabled] {
 		cursor: no-drop;
-		color: var(--chat--color-disabled);
+		color: var(--chat--input--elevenlabs--button--color-disabled, var(--chat--color-disabled));
 		background: var(--chat--input--elevenlabs--button--background-disabled, #9ca3af);
 		transform: none;
 

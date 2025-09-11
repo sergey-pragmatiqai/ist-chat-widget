@@ -206,6 +206,8 @@ function generateCSSVariables(theme: ChatTheme): Record<string, string> {
 		variables['--chat--input--elevenlabs--button--color-hover'] = theme.elevenLabsButtonColorHover;
 	if (theme.elevenLabsButtonBackgroundDisabled)
 		variables['--chat--input--elevenlabs--button--background-disabled'] = theme.elevenLabsButtonBackgroundDisabled;
+	if (theme.elevenLabsButtonColorDisabled)
+		variables['--chat--input--elevenlabs--button--color-disabled'] = theme.elevenLabsButtonColorDisabled;
 	if (theme.elevenLabsButtonBorderRadius)
 		variables['--chat--input--elevenlabs--button--border-radius'] = theme.elevenLabsButtonBorderRadius;
 	if (theme.elevenLabsButtonFocusColor)
