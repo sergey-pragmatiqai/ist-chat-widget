@@ -22,7 +22,7 @@ const welcomeText = computed(() => {
 });
 
 const welcomeIcon = computed(() => {
-	return options.welcomeMessage?.icon ?? '👋';
+	return options.welcomeMessage?.icon;
 });
 
 const isImageIcon = computed(() => {
@@ -52,7 +52,7 @@ function handleClose() {
 		<div v-if="show" class="welcome-message">
 			<button class="welcome-message-close" @click="handleClose">×</button>
 			<div class="welcome-message-content" @click="handleClick">
-				<div class="welcome-message-icon">
+				<div v-if="welcomeIcon" class="welcome-message-icon">
 					<img 
 						v-if="isImageIcon" 
 						:src="welcomeIcon" 
