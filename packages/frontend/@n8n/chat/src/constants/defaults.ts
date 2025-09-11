@@ -16,8 +16,6 @@ export const defaultOptions: ChatOptions = {
 	initialMessages: ['Hi there! 👋', 'My name is Nathan. How can I assist you today?'],
 	welcomeMessage: {
 		enabled: false,
-		text: 'Hello! Click here to start chatting with us.',
-		icon: '👋',
 	},
 	i18n: {
 		en: {

@@ -18,7 +18,7 @@ const emit = defineEmits<Emits>();
 const { options } = useOptions();
 
 const welcomeText = computed(() => {
-	return options.welcomeMessage?.text ?? 'Hello! Click here to start chatting with us.';
+	return options.welcomeMessage?.text;
 });
 
 const welcomeIcon = computed(() => {
@@ -49,7 +49,7 @@ function handleClose() {
 
 <template>
 	<Transition name="welcome-message-transition">
-		<div v-if="show" class="welcome-message">
+		<div v-if="show && welcomeText" class="welcome-message">
 			<button class="welcome-message-close" @click="handleClose">×</button>
 			<div class="welcome-message-content" @click="handleClick">
 				<div v-if="welcomeIcon" class="welcome-message-icon">
@@ -61,7 +61,7 @@ function handleClose() {
 					/>
 					<span v-else class="welcome-message-icon-emoji">{{ welcomeIcon }}</span>
 				</div>
-				<div class="welcome-message-text">{{ welcomeText }}</div>
+				<div v-if="welcomeText" class="welcome-message-text">{{ welcomeText }}</div>
 			</div>
 		</div>
 	</Transition>
