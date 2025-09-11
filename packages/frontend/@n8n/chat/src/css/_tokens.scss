@@ -161,7 +161,7 @@
 	--chat--welcome-message--min-width: 240px;
 	--chat--welcome-message--box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 	--chat--welcome-message--box-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-	--chat--welcome-message--border-hover: var(--chat--color-primary);
+	--chat--welcome-message--border-hover: var(--chat--color-medium);
 	--chat--welcome-message--transform-hover: translateY(-1px);
 	--chat--welcome-message--transition: all var(--chat--transition-duration) ease;
 	--chat--welcome-message--z-index: calc(var(--chat--window--z-index) + 1);
@@ -184,11 +184,11 @@
 	--chat--welcome-message--close--font-size: 1.125rem;
 	--chat--welcome-message--close--color: var(--chat--color-medium);
 	--chat--welcome-message--close--background: none;
-	--chat--welcome-message--close--background-hover: var(--chat--color-light);
+	--chat--welcome-message--close--background-hover: none;
 	--chat--welcome-message--close--color-hover: var(--chat--color-dark);
 	--chat--welcome-message--close--border-radius: var(--chat--border-radius);
 	--chat--welcome-message--close--transition: all var(--chat--transition-duration) ease;
-	--chat--welcome-message--close--focus-shadow: 0 0 0 2px var(--chat--color-primary);
+	--chat--welcome-message--close--focus-shadow: none;
 
 	/* Welcome Message Mobile */
 	--chat--welcome-message--mobile--max-width: calc(100vw - 2rem);
