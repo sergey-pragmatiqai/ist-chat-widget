@@ -7,13 +7,42 @@
     <!-- Include the chat CSS -->
 </head>
 <body>
-   
+  <style>
+    :root {
+    /* Custom Font Styles */
+    /* Set Georgia as default font for the entire chat */
+    .chat-container,
+    .chat-window,
+    .chat-messages,
+    .chat-message,
+    .chat-input,
+    .chat-textarea,
+    .chat-button {
+        font-family: Georgia, 'Times New Roman', Times, serif !important;
+    }
+    
+    /* Set Arial specifically for header elements */
+    .chat-header,
+    .chat-header *,
+    .chat-title,
+    .chat-subtitle {
+        font-family: Arial, Helvetica, sans-serif !important;
+    }
+    
+    /* Additional selectors to ensure proper font application */
+    [class*="chat-header"] {
+        font-family: Arial, Helvetica, sans-serif !important;
+    }
+    
+    [class*="chat-message"],
+    [class*="chat-input"],
+    [class*="chat-textarea"] {
+        font-family: Georgia, 'Times New Roman', Times, serif !important;
+    }
+</style>
 
     <link rel="stylesheet" href="https://n8n.pragmatiqai.com/chat/style.css">
-    <elevenlabs-convai
-     agent-id="agent_8701k4512n9dfaxsceyn1af41ea6">
-     
-     ></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+    <elevenlabs-convai agent-id="agent_5601k4zbekcce6gatbfd04s2xx6r"></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
     <script type="module">
         import { createChat } from 'https://n8n.pragmatiqai.com/chat/chat.bundle.es.js';
     
@@ -23,32 +52,78 @@
     showElevenLabsButton: true,
     showWindowCloseButton: true,
     elevenLabsAgentUrl:
-      "https://elevenlabs.io/app/talk-to?agent_id=agent_8701k4512n9dfaxsceyn1af41ea6",
+      "https://elevenlabs.io/app/talk-to?agent_id=agent_5601k4zbekcce6gatbfd04s2xx6r",
 
     theme: {
-      // IST Brand Colors
+      // IST Brand Colors - Complete Color Palette
       primaryColor: "#112351", // IST Velvet Blue
-      secondaryColor: "#112351", // Teal for buttons
-      lightColor: "#f5f5f5", // Light gray background
-      darkColor: "#112351", // Dark blue text
-      headerBackground: "#112351", // Blue header
+      primaryColorShade50: "#1a2d5f", // Darker blue shade
+      primaryColorShade100: "#0f1f47", // Even darker blue
+      secondaryColor: "#ffffff", // White
+      secondaryColorShade50: "#f7d278", // Rose gold shade
+      whiteColor: "#ffffff",
+      lightColor: "#f5f5f5",
+      lightColorShade50: "#e8e8e8",
+      lightColorShade100: "#d1d1d1",
+      mediumColor: "#cccccc",
+      darkColor: "#112351", // IST Velvet Blue
+      disabledColor: "#666666",
+      typingColor: "#112351", // IST Velvet Blue
+
+      // Layout
+      spacing: "1.2rem",
+      borderRadius: "12px",
+      transitionDuration: "0.3s",
+      windowWidth: "420px",
+      windowHeight: "650px",
+
+      // Header
+      headerHeight: "70px",
+      headerPadding: "1.2rem",
+      headerBackground: "#112351", // IST Velvet Blue
       headerColor: "#ffffff", // White header text
+      headerBorderTop: "none",
+      headerBorderBottom: "2px solid #ffffff",
+      headingFontSize: "20px",
+      subtitleFontSize: "0.9em",
+      subtitleLineHeight: "1.6",
+
+      // Header Icon Customization (optional)
+      headerIconSize: "50px",
+      headerIconMarginRight: "10px",
+      headerIconBorderRadius: "8px",
+      headerIconPadding: "8px",
+
+      // Input
+      textareaHeight: "60px",
+
+      // Messages
+      messageFontSize: "16px",
+      messagePadding: "1.2rem",
+      messageBorderRadius: "10px",
+      messageLineHeight: "1.5",
+      botMessageBackground: "#f5f5f5",
+      botMessageColor: "#112351",
+      botMessageBorder: "1px solid #e8e8e8",
+      userMessageBackground: "#ffffff",
+      userMessageColor: "#112351",
+      userMessageBorder: "1px solid #f7d278",
+      messagePreBackground: "rgba(17, 35, 81, 0.05)",
 
       // Send button styling
       sendButtonBackground: "#ffffff", // White background
       sendButtonColor: "#112351", // Blue icon
-      sendButtonBackgroundHover: "#0f1f47", // Teal background on hover
+      sendButtonBackgroundHover: "#0f1f47", // Darker blue on hover
       sendButtonColorHover: "#ffffff", // White icon on hover
 
-      // Toggle/Chat button (fixes the red color)
+      // Toggle/Chat button
       toggleBackground: "#112351", // IST Blue
-      toggleHoverBackground: "#1a2d5f", // Darker blue on hover
-      toggleActiveBackground: "#0f1f47", // Even darker when active/pressed
+      toggleHoverBackground: "#112351", // Darker blue on hover
+      toggleActiveBackground: "#f7d278", // Rose gold when active
+      toggleColor: "#ffffff", // White text
+      toggleSize: "70px",
 
-      // Layout
-      borderRadius: "12px",
-      spacing: "1.2rem",
-      messageFontSize: "16px",
+      // Typography
       fontFamily: "Georgia, 'Times New Roman', Times, serif",
 
       //ElevenLabs Button
@@ -72,12 +147,6 @@
       closeButtonLeft: "auto",
       closeButtonZIndex: "auto",
 
-      // Header Icon Customization (optional)
-      headerIconSize: "80px",
-      headerIconMarginRight: "0.75rem",
-      headerIconBorderRadius: "8px",
-      headerIconPadding: "8px",
-
       // Welcome Message Customization (optional)
       welcomeMessageBackground: "#f8f9fa",
       welcomeMessageColor: "#112351",
@@ -91,9 +160,7 @@
       welcomeMessageIconSize: "36px",
       welcomeMessageIconGap: "16px",
 
-      // Window size
-      windowWidth: "420px",
-      windowHeight: "650px",
+
       windowBottom: "120px",
       windowRight: "32px",
       windowZIndex: "999",
@@ -102,8 +169,7 @@
     i18n: {
       en: {
         title: "Welcome to the International School of Tallinn!",
-        subtitle: "Start a chat. We're here to help you 24/7.",
-        footer: "",
+        subtitle: "",
         getStarted: "New Conversation",
         inputPlaceholder: "Type your question..",
         closeButtonTooltip: "Close chat",
@@ -111,22 +177,17 @@
       },
     },
 
-    // Header icon configuration (appears to the left of the title)
-    headerIcon:
-      "https://www.clipartmax.com/png/full/110-1103840_fb-chat-bots-chat-bot-icon-png.png",
-
     // Welcome message configuration
     welcomeMessage: {
       enabled: true,
       text: "Hi! How may I help you?",
-      icon: "https://www.clipartmax.com/png/full/110-1103840_fb-chat-bots-chat-bot-icon-png.png",
     },
 
     initialMessages: [
       "**Hello and welcome!** I'm the fully automated **AI Assistant** for the **International School of Tallinn**, here to support you at any time.\n\nYou're welcome to ask me about:\n\n• Admissions (Preschool to Grade 12 – IB PYP, MYP, DP)\n\n• Tuition fees and available discounts\n\n• How to apply, including trial days and enrolment steps\n\n• Languages and support for international students\n\n• School calendar, meals, daily routines, and contact details\n\nIf I can't help directly, I'll make sure your question reaches the right person. \n\n Please note that for your privacy and security, we recommend avoiding the sharing of personal or confidential information through this chat.",
       "How may I assist you today?",
     ],
-});
+  });
     </script>
 </script>
 </body>

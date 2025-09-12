@@ -21,7 +21,7 @@ export const defaultOptions: ChatOptions = {
 	i18n: {
 		en: {
 			title: 'Hi there! 👋',
-			subtitle: "Start a chat. We're here to help you 24/7.",
+			subtitle: '',
 			footer: '',
 			getStarted: 'New Conversation',
 			inputPlaceholder: 'Type your question..',
