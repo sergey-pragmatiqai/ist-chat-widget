@@ -45,10 +45,32 @@ function handleClick() {
 function handleClose() {
 	emit('close');
 }
+
+function onBeforeLeave(el: Element) {
+	// Lock the width to prevent reflow
+	const element = el as HTMLElement;
+	const computedStyle = getComputedStyle(element);
+	element.style.width = computedStyle.width;
+	element.style.minWidth = computedStyle.width;
+	element.style.maxWidth = computedStyle.width;
+}
+
+function onLeave(el: Element) {
+	// Keep dimensions locked during transition
+}
+
+function onAfterLeave() {
+	// Clean up after transition
+}
 </script>
 
 <template>
-	<Transition name="welcome-message-transition">
+	<Transition 
+		name="welcome-message-transition"
+		@before-leave="onBeforeLeave"
+		@leave="onLeave"
+		@after-leave="onAfterLeave"
+	>
 		<div v-if="show && welcomeText" class="welcome-message">
 			<button class="welcome-message-close" @click="handleClose">×</button>
 			<div class="welcome-message-content" @click="handleClick">
@@ -163,6 +185,9 @@ function handleClose() {
 		line-height: var(--chat--welcome-message--line-height);
 		font-weight: var(--chat--welcome-message--font-weight);
 		text-align: var(--chat--welcome-message--text-align);
+		white-space: pre-line;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
 	}
 
 	// Responsive adjustments
@@ -198,7 +223,9 @@ function handleClose() {
 	}
 	
 	&-leave-active {
-		transition: all 0.2s ease-out;
+		transition: opacity 0.3s ease-out;
+		// Prevent any layout changes during transition
+		overflow: hidden;
 	}
 
 	&-enter-from {
@@ -207,7 +234,6 @@ function handleClose() {
 	}
 
 	&-leave-to {
-		transform: translateY(-0.25rem) scale(0.98);
 		opacity: 0;
 	}
 }
