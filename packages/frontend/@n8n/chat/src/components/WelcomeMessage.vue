@@ -127,7 +127,8 @@ function handleClose() {
 
 	.welcome-message-content {
 		display: flex;
-		align-items: flex-start;
+		align-items: var(--chat--welcome-message--align-items);
+		justify-content: var(--chat--welcome-message--justify-content);
 		gap: var(--chat--welcome-message--icon--gap);
 		padding-right: 1.5rem; // Space for close button
 	}
@@ -142,7 +143,6 @@ function handleClose() {
 		background: var(--chat--welcome-message--icon--background);
 		border-radius: var(--chat--welcome-message--icon--border-radius);
 		padding: var(--chat--welcome-message--icon--padding);
-		margin-top: 0.125rem; // Slight alignment adjustment
 		box-sizing: border-box;
 		
 		.welcome-message-icon-emoji {
@@ -162,6 +162,7 @@ function handleClose() {
 		flex: 1;
 		line-height: var(--chat--welcome-message--line-height);
 		font-weight: var(--chat--welcome-message--font-weight);
+		text-align: var(--chat--welcome-message--text-align);
 	}
 
 	// Responsive adjustments

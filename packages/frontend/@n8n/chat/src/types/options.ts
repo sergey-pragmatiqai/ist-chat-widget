@@ -121,12 +121,6 @@ export interface ChatTheme {
 	fileButtonColorHover?: string;
 	filesSpacing?: string;
 	
-	// Voice Recording Button (if needed)
-	voiceButtonBackground?: string;
-	voiceButtonColor?: string;
-	voiceButtonBackgroundHover?: string;
-	voiceButtonColorHover?: string;
-	
 	// ElevenLabs Button Specific
 	elevenLabsButtonBackground?: string;
 	elevenLabsButtonColor?: string;
@@ -168,6 +162,11 @@ export interface ChatTheme {
 	welcomeMessageRight?: string;
 	welcomeMessageTop?: string;
 	welcomeMessageLeft?: string;
+
+	// Welcome Message Content Alignment
+	welcomeMessageAlignItems?: string;
+	welcomeMessageJustifyContent?: string;
+	welcomeMessageTextAlign?: string;
 
 	// Welcome Message Icon
 	welcomeMessageIconSize?: string;

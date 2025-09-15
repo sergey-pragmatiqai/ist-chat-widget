@@ -127,12 +127,6 @@
 	--chat--input--file--button--color-hover: var(--chat--color-secondary-shade-50);
 	--chat--files-spacing: 0.25rem;
 
-	/* Voice Recording Button */
-	--chat--input--voice--button--background: var(--chat--color-white);
-	--chat--input--voice--button--color: var(--chat--color-secondary);
-	--chat--input--voice--button--background-hover: var(--chat--color-light);
-	--chat--input--voice--button--color-hover: var(--chat--color-secondary-shade-50);
-
 	/* ElevenLabs Button */
 	--chat--input--elevenlabs--button--background: var(--chat--color-primary);
 	--chat--input--elevenlabs--button--color: var(--chat--color-white);
@@ -171,6 +165,11 @@
 	--chat--welcome-message--right: 0;
 	--chat--welcome-message--top: auto;
 	--chat--welcome-message--left: auto;
+
+	/* Welcome Message Content Alignment */
+	--chat--welcome-message--align-items: center;
+	--chat--welcome-message--justify-content: flex-start;
+	--chat--welcome-message--text-align: left;
 
 	/* Welcome Message Icon */
 	--chat--welcome-message--icon--size: 2rem;

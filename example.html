@@ -1,194 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>N8N Chat Integration Example</title>
     <!-- Include the chat CSS -->
-</head>
-<body>
-  <style>
-    :root {
-    /* Custom Font Styles */
-    /* Set Georgia as default font for the entire chat */
-    .chat-container,
-    .chat-window,
-    .chat-messages,
-    .chat-message,
-    .chat-input,
-    .chat-textarea,
-    .chat-button {
-        font-family: Georgia, 'Times New Roman', Times, serif !important;
-    }
-    
-    /* Set Arial specifically for header elements */
-    .chat-header,
-    .chat-header *,
-    .chat-title,
-    .chat-subtitle {
-        font-family: Arial, Helvetica, sans-serif !important;
-    }
-    
-    /* Additional selectors to ensure proper font application */
-    [class*="chat-header"] {
-        font-family: Arial, Helvetica, sans-serif !important;
-    }
-    
-    [class*="chat-message"],
-    [class*="chat-input"],
-    [class*="chat-textarea"] {
-        font-family: Georgia, 'Times New Roman', Times, serif !important;
-    }
-</style>
+  </head>
+  <body>
+    <style></style>
 
-    <link rel="stylesheet" href="https://n8n.pragmatiqai.com/chat/style.css">
-    <elevenlabs-convai agent-id="agent_5601k4zbekcce6gatbfd04s2xx6r"></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+    <link rel="stylesheet" href="https://n8n.pragmatiqai.com/chat/style.css" />
+    <elevenlabs-convai
+      agent-id="agent_4001k54p101sehq82jjqq40qnjkh"
+    ></elevenlabs-convai>
+    <script
+      src="https://unpkg.com/@elevenlabs/convai-widget-embed"
+      async
+      type="text/javascript"
+    ></script>
+
     <script type="module">
-        import { createChat } from 'https://n8n.pragmatiqai.com/chat/chat.bundle.es.js';
-    
-        createChat({
-            webhookUrl: 'https://n8n.pragmatiqai.com/webhook/812534ca-e29c-474c-b93f-7fd61319d06f/chat',
-            mode: "window",
-    showElevenLabsButton: true,
-    showWindowCloseButton: true,
-    elevenLabsAgentUrl:
-      "https://elevenlabs.io/app/talk-to?agent_id=agent_5601k4zbekcce6gatbfd04s2xx6r",
+      import { createChat } from "https://n8n.pragmatiqai.com/chat/chat.bundle.es.js";
 
-    theme: {
-      // IST Brand Colors - Complete Color Palette
-      primaryColor: "#112351", // IST Velvet Blue
-      primaryColorShade50: "#1a2d5f", // Darker blue shade
-      primaryColorShade100: "#0f1f47", // Even darker blue
-      secondaryColor: "#ffffff", // White
-      secondaryColorShade50: "#f7d278", // Rose gold shade
-      whiteColor: "#ffffff",
-      lightColor: "#f5f5f5",
-      lightColorShade50: "#e8e8e8",
-      lightColorShade100: "#d1d1d1",
-      mediumColor: "#cccccc",
-      darkColor: "#112351", // IST Velvet Blue
-      disabledColor: "#666666",
-      typingColor: "#112351", // IST Velvet Blue
+      createChat({
+        webhookUrl:
+          "https://n8n.pragmatiqai.com/webhook/4070057c-7bf6-4dc4-8c1a-784cba72a92a/chat",
+        mode: "window",
+        showElevenLabsButton: true,
+        showWindowCloseButton: true,
+        elevenLabsAgentUrl:
+          "https://elevenlabs.io/app/talk-to?agent_id=agent_4001k54p101sehq82jjqq40qnjkh",
 
-      // Layout
-      spacing: "1.2rem",
-      borderRadius: "12px",
-      transitionDuration: "0.3s",
-      windowWidth: "420px",
-      windowHeight: "650px",
+        theme: {
+          // IST Brand Colors - Complete Color Palette
+          primaryColor: "#112351", // IST Velvet Blue
+          primaryColorShade50: "#1a2d5f", // Darker blue shade
+          primaryColorShade100: "#0f1f47", // Even darker blue
+          secondaryColor: "#ffffff", // White
+          secondaryColorShade50: "#f7d278", // Rose gold shade
+          whiteColor: "#ffffff",
+          lightColor: "#f5f5f5",
+          lightColorShade50: "#e8e8e8",
+          lightColorShade100: "#d1d1d1",
+          mediumColor: "#cccccc",
+          darkColor: "#112351", // IST Velvet Blue
+          disabledColor: "#666666",
+          typingColor: "#112351", // IST Velvet Blue
 
-      // Header
-      headerHeight: "70px",
-      headerPadding: "1.2rem",
-      headerBackground: "#112351", // IST Velvet Blue
-      headerColor: "#ffffff", // White header text
-      headerBorderTop: "none",
-      headerBorderBottom: "2px solid #ffffff",
-      headingFontSize: "20px",
-      subtitleFontSize: "0.9em",
-      subtitleLineHeight: "1.6",
+          // Layout
+          spacing: "1.2rem",
+          borderRadius: "12px",
+          transitionDuration: "0.3s",
+          windowWidth: "420px",
+          windowHeight: "650px",
 
-      // Header Icon Customization (optional)
-      headerIconSize: "50px",
-      headerIconMarginRight: "10px",
-      headerIconBorderRadius: "8px",
-      headerIconPadding: "8px",
+          // Header
+          headerHeight: "70px",
+          headerPadding: "1.2rem",
+          headerBackground: "#112351", // IST Velvet Blue
+          headerColor: "#ffffff", // White header text
+          headerBorderTop: "none",
+          headerBorderBottom: "2px solid #ffffff",
+          headingFontSize: "20px",
+          subtitleFontSize: "0.9em",
+          subtitleLineHeight: "1.6",
 
-      // Input
-      textareaHeight: "60px",
+          // Header Icon Customization (optional)
+          headerIconSize: "60px",
+          headerIconMarginRight: "10px",
+          headerIconBorderRadius: "8px",
+          headerIconPadding: "8px",
 
-      // Messages
-      messageFontSize: "16px",
-      messagePadding: "1.2rem",
-      messageBorderRadius: "10px",
-      messageLineHeight: "1.5",
-      botMessageBackground: "#f5f5f5",
-      botMessageColor: "#112351",
-      botMessageBorder: "1px solid #e8e8e8",
-      userMessageBackground: "#ffffff",
-      userMessageColor: "#112351",
-      userMessageBorder: "1px solid #f7d278",
-      messagePreBackground: "rgba(17, 35, 81, 0.05)",
+          // Input
+          textareaHeight: "60px",
 
-      // Send button styling
-      sendButtonBackground: "#ffffff", // White background
-      sendButtonColor: "#112351", // Blue icon
-      sendButtonBackgroundHover: "#0f1f47", // Darker blue on hover
-      sendButtonColorHover: "#ffffff", // White icon on hover
+          // Messages
+          messageFontSize: "16px",
+          messagePadding: "1.2rem",
+          messageBorderRadius: "10px",
+          messageLineHeight: "1.5",
+          botMessageBackground: "#f5f5f5",
+          botMessageColor: "#112351",
+          botMessageBorder: "1px solid #e8e8e8",
+          userMessageBackground: "#ffffff",
+          userMessageColor: "#112351",
+          userMessageBorder: "1px solid #f7d278",
+          messagePreBackground: "rgba(17, 35, 81, 0.05)",
 
-      // Toggle/Chat button
-      toggleBackground: "#112351", // IST Blue
-      toggleHoverBackground: "#112351", // Darker blue on hover
-      toggleActiveBackground: "#f7d278", // Rose gold when active
-      toggleColor: "#ffffff", // White text
-      toggleSize: "70px",
+          // Send button styling
+          sendButtonBackground: "#ffffff", // White background
+          sendButtonColor: "#112351", // Blue icon
+          sendButtonBackgroundHover: "#0f1f47", // Darker blue on hover
+          sendButtonColorHover: "#ffffff", // White icon on hover
 
-      // Typography
-      fontFamily: "Georgia, 'Times New Roman', Times, serif",
+          // Toggle/Chat button
+          toggleBackground: "#112351", // IST Blue
+          toggleHoverBackground: "#112351", // Darker blue on hover
+          toggleActiveBackground: "#f7d278", // Rose gold when active
+          toggleColor: "#ffffff", // White text
+          toggleSize: "70px",
 
-      //ElevenLabs Button
-      elevenLabsButtonBackground: "#112351",
-      elevenLabsButtonColor: "#ffffff",
-      elevenLabsButtonBackgroundHover: "#0f1f47",
-      elevenLabsButtonColorHover: "#ffffff",
-      elevenLabsButtonBackgroundDisabled: "#9ca3af",
-      elevenLabsButtonBorderRadius: "8px",
-      elevenLabsButtonFocusColor: "#112351",
+          // Typography
+          fontFamily: "Georgia, 'Times New Roman', Times, serif",
 
-      //Close Button
-      closeButtonColor: "#ffffff",
-      closeButtonBorderRadius: "8px",
-      closeButtonPadding: "6px",
-      closeButtonIconSize: "18px",
-      closeButtonPosition: "static",
-      closeButtonTop: "auto",
-      closeButtonRight: "auto",
-      closeButtonBottom: "auto",
-      closeButtonLeft: "auto",
-      closeButtonZIndex: "auto",
+          //ElevenLabs Button
+          elevenLabsButtonBackground: "#112351",
+          elevenLabsButtonColor: "#ffffff",
+          elevenLabsButtonBackgroundHover: "#0f1f47",
+          elevenLabsButtonColorHover: "#ffffff",
+          elevenLabsButtonBackgroundDisabled: "#9ca3af",
+          elevenLabsButtonBorderRadius: "8px",
+          elevenLabsButtonFocusColor: "#112351",
 
-      // Welcome Message Customization (optional)
-      welcomeMessageBackground: "#f8f9fa",
-      welcomeMessageColor: "#112351",
-      welcomeMessageBorder: "1px solid #112351",
-      welcomeMessageBorderRadius: "16px",
-      welcomeMessageFontSize: "15px",
-      welcomeMessageCloseColorHover: "#112351",
-      welcomeMessageCloseBorderRadius: "16px",
-      welcomeMessageCloseTransition: "all 0.3s ease",
-      welcomeMessageCloseFocusShadow: "0 0 0 2px #112351",
-      welcomeMessageIconSize: "36px",
-      welcomeMessageIconGap: "16px",
+          //Close Button
+          closeButtonColor: "#ffffff",
+          closeButtonBorderRadius: "8px",
+          closeButtonPadding: "6px",
+          closeButtonIconSize: "18px",
+          closeButtonPosition: "static",
+          closeButtonTop: "auto",
+          closeButtonRight: "auto",
+          closeButtonBottom: "auto",
+          closeButtonLeft: "auto",
+          closeButtonZIndex: "auto",
 
+          // Welcome Message Customization (optional)
+          welcomeMessageBackground: "#f8f9fa",
+          welcomeMessageColor: "#112351",
+          welcomeMessageBorder: "1px solid #112351",
+          welcomeMessageBorderRadius: "16px",
+          welcomeMessageFontSize: "15px",
+          welcomeMessageCloseColorHover: "#112351",
+          welcomeMessageCloseBorderRadius: "16px",
+          welcomeMessageCloseTransition: "all 0.3s ease",
+          welcomeMessageCloseFocusShadow: "0 0 0 2px #112351",
+          welcomeMessageIconSize: "60px",
+          welcomeMessageIconGap: "16px",
 
-      windowBottom: "120px",
-      windowRight: "32px",
-      windowZIndex: "999",
-    },
+          windowBottom: "120px",
+          windowRight: "32px",
+          windowZIndex: "999",
 
-    i18n: {
-      en: {
-        title: "Welcome to the International School of Tallinn!",
-        subtitle: "",
-        getStarted: "New Conversation",
-        inputPlaceholder: "Type your question..",
-        closeButtonTooltip: "Close chat",
-        elevenLabsButtonTooltip: "Open ElevenLabs Agent",
-      },
-    },
+          customCSS: `
+          :root {
+              /* Custom Font Styles */
+              /* Set Georgia as default font for the entire chat */
+              .chat-container,
+              .chat-window,
+              .chat-messages,
+              .chat-message,
+              .chat-input,
+              .chat-textarea,
+              .chat-button {
+                  font-family: Georgia, 'Times New Roman', Times, serif !important;
+              }
 
-    // Welcome message configuration
-    welcomeMessage: {
-      enabled: true,
-      text: "Hi! How may I help you?",
-    },
+              /* Set Arial specifically for header elements */
+              .chat-header,
+              .chat-header *,
+              .chat-title,
+              .chat-subtitle {
+                  font-family: Arial, Helvetica, sans-serif !important;
+              }
 
-    initialMessages: [
-      "**Hello and welcome!** I'm the fully automated **AI Assistant** for the **International School of Tallinn**, here to support you at any time.\n\nYou're welcome to ask me about:\n\n• Admissions (Preschool to Grade 12 – IB PYP, MYP, DP)\n\n• Tuition fees and available discounts\n\n• How to apply, including trial days and enrolment steps\n\n• Languages and support for international students\n\n• School calendar, meals, daily routines, and contact details\n\nIf I can't help directly, I'll make sure your question reaches the right person. \n\n Please note that for your privacy and security, we recommend avoiding the sharing of personal or confidential information through this chat.",
-      "How may I assist you today?",
-    ],
-  });
+              /* Additional selectors to ensure proper font application */
+              [class*="chat-header"] {
+                  font-family: Arial, Helvetica, sans-serif !important;
+              }
+
+              [class*="chat-message"],
+              [class*="chat-input"],
+              [class*="chat-textarea"] {
+                  font-family: Georgia, 'Times New Roman', Times, serif !important;
+            }
+          `,
+        },
+
+        i18n: {
+          en: {
+            title: "Welcome to the International School of Tallinn!",
+            subtitle: "",
+            getStarted: "New Conversation",
+            inputPlaceholder: "Type your question..",
+            closeButtonTooltip: "Close chat",
+            elevenLabsButtonTooltip: "Open ElevenLabs Agent",
+          },
+        },
+
+        // Welcome message configuration
+        welcomeMessage: {
+          enabled: true,
+          text: "Hi! How may I help you?",
+          icon: "https://n8n.pragmatiqai.com/chat/assets/ist_chat_icon.png",
+        },
+
+        // Header icon
+        headerIcon: "https://n8n.pragmatiqai.com/chat/assets/ist_chat_icon.png",
+
+        initialMessages: [
+          "**Hello and welcome!** I'm the fully automated **AI Assistant** for the **International School of Tallinn**, here to support you at any time.\n\nYou're welcome to ask me about:\n\n• Admissions (Preschool to Grade 12 – IB PYP, MYP, DP)\n\n• Tuition fees and available discounts\n\n• How to apply, including trial days and enrolment steps\n\n• Languages and support for international students\n\n• School calendar, meals, daily routines, and contact details\n\nIf I can't help directly, I'll make sure your question reaches the right person. \n\n Please note that for your privacy and security, we recommend avoiding the sharing of personal or confidential information through this chat.",
+          "How may I assist you today?",
+        ],
+      });
     </script>
-</script>
-</body>
+  </body>
 </html>

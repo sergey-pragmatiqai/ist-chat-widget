@@ -185,16 +185,6 @@ function generateCSSVariables(theme: ChatTheme): Record<string, string> {
 		variables['--chat--input--file--button--color-hover'] = theme.fileButtonColorHover;
 	if (theme.filesSpacing) variables['--chat--files-spacing'] = theme.filesSpacing;
 
-	// Voice Recording Button
-	if (theme.voiceButtonBackground)
-		variables['--chat--input--voice--button--background'] = theme.voiceButtonBackground;
-	if (theme.voiceButtonColor)
-		variables['--chat--input--voice--button--color'] = theme.voiceButtonColor;
-	if (theme.voiceButtonBackgroundHover)
-		variables['--chat--input--voice--button--background-hover'] = theme.voiceButtonBackgroundHover;
-	if (theme.voiceButtonColorHover)
-		variables['--chat--input--voice--button--color-hover'] = theme.voiceButtonColorHover;
-
 	// ElevenLabs Button
 	if (theme.elevenLabsButtonBackground)
 		variables['--chat--input--elevenlabs--button--background'] = theme.elevenLabsButtonBackground;
@@ -263,6 +253,14 @@ function generateCSSVariables(theme: ChatTheme): Record<string, string> {
 		variables['--chat--welcome-message--top'] = theme.welcomeMessageTop;
 	if (theme.welcomeMessageLeft)
 		variables['--chat--welcome-message--left'] = theme.welcomeMessageLeft;
+
+	// Welcome Message Content Alignment
+	if (theme.welcomeMessageAlignItems)
+		variables['--chat--welcome-message--align-items'] = theme.welcomeMessageAlignItems;
+	if (theme.welcomeMessageJustifyContent)
+		variables['--chat--welcome-message--justify-content'] = theme.welcomeMessageJustifyContent;
+	if (theme.welcomeMessageTextAlign)
+		variables['--chat--welcome-message--text-align'] = theme.welcomeMessageTextAlign;
 
 	// Welcome Message Icon
 	if (theme.welcomeMessageIconSize)
