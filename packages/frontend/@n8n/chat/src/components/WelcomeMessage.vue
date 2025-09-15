@@ -193,12 +193,13 @@ function onAfterLeave() {
 	// Responsive adjustments
 	@media (max-width: 480px) {
 		max-width: var(--chat--welcome-message--mobile--max-width);
-		min-width: auto;
-		right: var(--chat--spacing);
-		left: var(--chat--spacing);
+		min-width: var(--chat--welcome-message--mobile--min-width);
+		right: var(--chat--welcome-message--right);
+		left: var(--chat--welcome-message--left);
 		
 		.welcome-message-content {
 			gap: var(--chat--welcome-message--mobile--gap);
+			padding-right: 8px;
 		}
 		
 		.welcome-message-icon {

@@ -192,6 +192,7 @@
 
 	/* Welcome Message Mobile */
 	--chat--welcome-message--mobile--max-width: calc(100vw - 2rem);
+	--chat--welcome-message--mobile--min-width: 150px;
 	--chat--welcome-message--mobile--icon-size: 1.5rem;
 	--chat--welcome-message--mobile--icon-emoji-size: 1.25rem;
 	--chat--welcome-message--mobile--font-size: 0.8125rem;
