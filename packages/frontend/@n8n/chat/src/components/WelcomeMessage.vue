@@ -29,9 +29,6 @@ const showArrow = computed(() => {
 	return options.welcomeMessage?.showArrow;
 });
 
-const arrowRightOffset = computed(() => {
-	return options.theme?.welcomeMessageArrowRightOffset || '33px';
-});
 
 const isImageIcon = computed(() => {
 	const icon = welcomeIcon.value;
@@ -83,13 +80,7 @@ function onBeforeLeave(el: Element) {
 				</div>
 				<div v-if="welcomeText" class="welcome-message-text">{{ welcomeText }}</div>
 			</div>
-			<div 
-				v-if="showArrow" 
-				class="welcome-message-arrow"
-				:style="{
-					right: arrowRightOffset
-				}"
-			></div>
+			<div v-if="showArrow" class="welcome-message-arrow"></div>
 		</div>
 	</Transition>
 </template>
@@ -199,6 +190,7 @@ function onBeforeLeave(el: Element) {
 
 	.welcome-message-arrow {
 		position: absolute;
+		right: var(--chat--welcome-message--arrow--right-offset, 33px);
 		top: 100%;
 		width: 0;
 		height: 0;

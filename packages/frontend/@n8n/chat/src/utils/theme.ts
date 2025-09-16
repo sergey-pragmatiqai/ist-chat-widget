@@ -308,6 +308,10 @@ function generateCSSVariables(theme: ChatTheme): Record<string, string> {
 	if (theme.welcomeMessageMobileGap)
 		variables['--chat--welcome-message--mobile--gap'] = theme.welcomeMessageMobileGap;
 
+	// Welcome Message Arrow
+	if (theme.welcomeMessageArrowRightOffset)
+		variables['--chat--welcome-message--arrow--right-offset'] = theme.welcomeMessageArrowRightOffset;
+
 	// Header Icon
 	if (theme.headerIconSize)
 		variables['--chat--header--icon--size'] = theme.headerIconSize;
