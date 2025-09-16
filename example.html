@@ -6,6 +6,18 @@
     <title>N8N Chat Integration Example</title>
     <!-- Include the chat CSS -->
     <link rel="stylesheet" href="https://n8n.pragmatiqai.com/chat/style.css" />
+    <style>
+      elevenlabs-convai {
+        width: 300px !important;
+        height: 300px !important;
+        position: fixed !important;
+        bottom: 0px !important;
+        right: 80px !important;
+        top: auto;
+        left: auto;
+        z-index: 1000 !important;
+      }
+    </style>
   </head>
   <body>
     <elevenlabs-convai
@@ -70,7 +82,7 @@
           welcomeMessageIconGap: "16px",
           welcomeMessageMaxWidth: "120px",
 
-          windowBottom: "120px",
+          windowBottom: "32px",
           windowRight: "32px",
           windowZIndex: "999",
           customCSS: `          
@@ -130,7 +142,7 @@
           --chat--toggle--hover--background: #ff6600;                /* Orange instead of white */
           --chat--toggle--active--background: var(--chat--color-secondary-shade-50);
           --chat--toggle--color: var(--chat--color-secondary);
-          --chat--toggle--size: 70px;
+          --chat--toggle--size: 60px;
       }
       
       /* Custom Font Styles */
