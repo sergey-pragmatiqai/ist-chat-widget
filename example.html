@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>N8N Chat Integration Example</title>
     <!-- Include the chat CSS -->
+    <link rel="stylesheet" href="https://n8n.pragmatiqai.com/chat/style.css" />
   </head>
   <body>
-    <style></style>
-
-    <link rel="stylesheet" href="https://n8n.pragmatiqai.com/chat/style.css" />
     <elevenlabs-convai
       agent-id="agent_4001k54p101sehq82jjqq40qnjkh"
     ></elevenlabs-convai>
@@ -32,75 +30,10 @@
           "https://elevenlabs.io/app/talk-to?agent_id=agent_4001k54p101sehq82jjqq40qnjkh",
 
         theme: {
-          // IST Brand Colors - Complete Color Palette
-          primaryColor: "#112351", // IST Velvet Blue
-          primaryColorShade50: "#1a2d5f", // Darker blue shade
-          primaryColorShade100: "#0f1f47", // Even darker blue
-          secondaryColor: "#ffffff", // White
-          secondaryColorShade50: "#f7d278", // Rose gold shade
-          whiteColor: "#ffffff",
-          lightColor: "#f5f5f5",
-          lightColorShade50: "#e8e8e8",
-          lightColorShade100: "#d1d1d1",
-          mediumColor: "#cccccc",
-          darkColor: "#112351", // IST Velvet Blue
-          disabledColor: "#666666",
-          typingColor: "#112351", // IST Velvet Blue
-
-          // Layout
-          spacing: "1.2rem",
-          borderRadius: "12px",
-          transitionDuration: "0.3s",
-          windowWidth: "420px",
-          windowHeight: "650px",
-
-          // Header
-          headerHeight: "70px",
-          headerPadding: "1.2rem",
-          headerBackground: "#112351", // IST Velvet Blue
-          headerColor: "#ffffff", // White header text
-          headerBorderTop: "none",
-          headerBorderBottom: "2px solid #ffffff",
-          headingFontSize: "20px",
-          subtitleFontSize: "0.9em",
-          subtitleLineHeight: "1.6",
-
           // Header Icon Customization (optional)
-          headerIconSize: "70px",
+          headerIconSize: "30px",
           headerIconMarginRight: "10px",
           headerIconBorderRadius: "8px",
-
-          // Input
-          textareaHeight: "60px",
-
-          // Messages
-          messageFontSize: "16px",
-          messagePadding: "1.2rem",
-          messageBorderRadius: "10px",
-          messageLineHeight: "1.5",
-          botMessageBackground: "#f5f5f5",
-          botMessageColor: "#112351",
-          botMessageBorder: "1px solid #e8e8e8",
-          userMessageBackground: "#ffffff",
-          userMessageColor: "#112351",
-          userMessageBorder: "1px solid #f7d278",
-          messagePreBackground: "rgba(17, 35, 81, 0.05)",
-
-          // Send button styling
-          sendButtonBackground: "#ffffff", // White background
-          sendButtonColor: "#112351", // Blue icon
-          sendButtonBackgroundHover: "#0f1f47", // Darker blue on hover
-          sendButtonColorHover: "#ffffff", // White icon on hover
-
-          // Toggle/Chat button
-          toggleBackground: "#112351", // IST Blue
-          toggleHoverBackground: "#112351", // Darker blue on hover
-          toggleActiveBackground: "#f7d278", // Rose gold when active
-          toggleColor: "#ffffff", // White text
-          toggleSize: "70px",
-
-          // Typography
-          fontFamily: "Georgia, 'Times New Roman', Times, serif",
 
           //ElevenLabs Button
           elevenLabsButtonBackground: "#112351",
@@ -135,49 +68,196 @@
           welcomeMessageCloseFocusShadow: "0 0 0 2px #112351",
           welcomeMessageIconSize: "60px",
           welcomeMessageIconGap: "16px",
+          welcomeMessageMaxWidth: "120px",
 
           windowBottom: "120px",
           windowRight: "32px",
           windowZIndex: "999",
-
-          customCSS: `
+          customCSS: `          
           :root {
-              /* Custom Font Styles */
-              /* Set Georgia as default font for the entire chat */
-              .chat-container,
-              .chat-window,
-              .chat-messages,
-              .chat-message,
-              .chat-input,
-              .chat-textarea,
-              .chat-button {
-                  font-family: Georgia, 'Times New Roman', Times, serif !important;
-              }
-
-              /* Set Arial specifically for header elements */
-              .chat-header,
-              .chat-header *,
-              .chat-title,
-              .chat-subtitle {
-                  font-family: Arial, Helvetica, sans-serif !important;
-              }
-
-              /* Additional selectors to ensure proper font application */
-              [class*="chat-header"] {
-                  font-family: Arial, Helvetica, sans-serif !important;
-              }
-
-              [class*="chat-message"],
-              [class*="chat-input"],
-              [class*="chat-textarea"] {
-                  font-family: Georgia, 'Times New Roman', Times, serif !important;
-            }
+          /* IST Brand Colors */
+          --chat--color-primary: #112351;                    /* IST Velvet Blue */
+          --chat--color-primary-shade-50: #1a2d5f;          /* Darker blue shade */
+          --chat--color-primary-shade-100: #0f1f47;         /* Even darker blue */
+          --chat--color-secondary: #ffffff;                  /* IST Rose Gold */
+          --chat--color-secondary-shade-50: #f7d278;        /* Slightly darker rose gold */
+          --chat--color-white: #ffffff;
+          --chat--color-light: #f5f5f5;
+          --chat--color-light-shade-50: #e8e8e8;
+          --chat--color-light-shade-100: #d1d1d1;
+          --chat--color-medium: #cccccc;
+          --chat--color-dark: #112351;                       /* IST Velvet Blue */
+          --chat--color-disabled: #666666;
+          --chat--color-typing: #112351;                     /* IST Velvet Blue */
+          
+          /* Layout */
+          --chat--spacing: 1.08rem;
+          --chat--border-radius: 12px;
+          --chat--transition-duration: 0.3s;
+          --chat--window--width: 420px;
+          --chat--window--height: 650px;
+          
+          /* Header */
+          --chat--header-height: 35px;
+          --chat--header--padding: var(--chat--spacing);
+          --chat--header--background: var(--chat--color-dark);
+          --chat--header--color: var(--chat--color-secondary);   
+          --chat--header--border-top: none;
+          --chat--header--border-bottom: 2px solid var(--chat--color-secondary);
+          --chat--heading--font-size: 20px;
+          --chat--header--color: var(--chat--color-secondary);
+          --chat--subtitle--font-size: 0.9em;
+          --chat--subtitle--line-height: 1.6;
+          
+          /* Input */
+          --chat--textarea--height: 60px;
+          
+          /* Messages */
+          --chat--message--font-size: 14px;
+          --chat--message--padding: var(--chat--spacing);
+          --chat--message--border-radius: 10px;
+          --chat--message-line-height: 1.5;
+          --chat--message--bot--background: var(--chat--color-light);
+          --chat--message--bot--color: var(--chat--color-dark);
+          --chat--message--bot--border: 1px solid orange;
+          --chat--message--user--background: #F9D98D;        /* Changed to requested color */
+          --chat--message--user--color: var(--chat--color-dark);
+          --chat--message--user--border: 1px solid var(--chat--color-secondary-shade-50);
+          --chat--message--pre--background: rgba(17, 35, 81, 0.05);
+          
+          /* Toggle Button */
+          --chat--toggle--background: var(--chat--color-primary);
+          --chat--toggle--hover--background: #ff6600;                /* Orange instead of white */
+          --chat--toggle--active--background: var(--chat--color-secondary-shade-50);
+          --chat--toggle--color: var(--chat--color-secondary);
+          --chat--toggle--size: 70px;
+      }
+      
+      /* Custom Font Styles */
+      /* Set Georgia as default font for the entire chat */
+      .chat-container,
+      .chat-window,
+      .chat-messages,
+      .chat-message,
+      .chat-input,
+      .chat-textarea,
+      .chat-button {
+          font-family: Arial, Helvetica, sans-serif !important;
+      }
+      
+      /* Set Arial specifically for header elements */
+      .chat-header,
+      .chat-header *,
+      .chat-title,
+      .chat-subtitle {
+          font-family: Arial, Helvetica, sans-serif !important;
+      }
+      
+      /* Additional selectors to ensure proper font application */
+      [class*="chat-header"] {
+          font-family: Arial, Helvetica, sans-serif !important;
+      }
+      
+      [class*="chat-message"],
+      [class*="chat-input"],
+      [class*="chat-textarea"] {
+          font-family: Arial, Helvetica, sans-serif !important;
+      }
+      
+      // /* Safari-specific fixes for send button */
+      // /* Target the send button specifically */
+      // [class*="chat-input"] button,
+      // [class*="chat-send"] button,
+      // button[type="submit"],
+      // .chat-input-container button {
+      //     -webkit-appearance: none !important;
+      //     appearance: none !important;
+      //     min-width: 40px !important;
+      //     max-width: 48px !important;
+      //     width: 44px !important;
+      //     min-height: 60px !important;  /* Match textarea height */
+      //     max-height: 60px !important;  /* Match textarea height */
+      //     height: 60px !important;      /* Match textarea height */
+      //     padding: 8px !important;
+      //     margin: 0 !important;
+      //     border-radius: 6px !important;
+      //     box-sizing: border-box !important;
+      //     display: flex !important;
+      //     align-items: center !important;
+      //     justify-content: center !important;
+      //     flex-shrink: 0 !important;
+      // }
+      
+      // /* Additional Safari-specific button fixes */
+      // @supports (-webkit-appearance: none) {
+      //     /* This targets WebKit browsers including Safari */
+      //     [class*="chat-input"] button svg,
+      //     [class*="chat-send"] button svg,
+      //     button[type="submit"] svg {
+      //         width: 20px !important;
+      //         height: 20px !important;
+      //         max-width: 20px !important;
+      //         max-height: 20px !important;
+      //     }
+          
+      //     /* Force consistent sizing in Safari */
+      //     [class*="chat-input-container"] {
+      //         display: flex !important;
+      //         align-items: center !important;
+      //         gap: 8px !important;
+      //     }
+          
+      //     /* Prevent Safari from enlarging form elements */
+      //     [class*="chat-input"] *,
+      //     [class*="chat-send"] * {
+      //         box-sizing: border-box !important;
+      //         -webkit-text-size-adjust: 100% !important;
+      //     }
+      // }
+      
+      // /* Fallback for any other button selectors the n8n chat might use */
+      // [data-chat] button,
+      // .n8n-chat button {
+      //     -webkit-appearance: none !important;
+      //     max-width: 48px !important;
+      //     max-height: 48px !important;
+      // }
+      
+      // /* Active state styling - make button blue when text is entered */
+      // [class*="chat-input"] button:enabled,
+      // [class*="chat-input"] button.active,
+      // [class*="chat-input"] button:not(:disabled),
+      // [class*="chat-send"] button:enabled,
+      // [class*="chat-send"] button.active,
+      // [class*="chat-send"] button:not(:disabled),
+      // button[type="submit"]:enabled,
+      // button[type="submit"]:not(:disabled) {
+      //     background-color: var(--chat--color-primary) !important; /* IST Blue */
+      //     color: var(--chat--color-secondary) !important; /* White */
+      //     border-color: var(--chat--color-primary) !important;
+      // }
+      
+      // /* Hover state for active buttons */
+      // [class*="chat-input"] button:enabled:hover,
+      // [class*="chat-send"] button:enabled:hover,
+      // button[type="submit"]:enabled:hover {
+      //     background-color: var(--chat--color-primary-shade-50) !important; /* Darker blue on hover */
+      // }
+      
+      // /* Disabled state styling */
+      // [class*="chat-input"] button:disabled,
+      // [class*="chat-send"] button:disabled,
+      // button[type="submit"]:disabled {
+      //     background-color: var(--chat--color-disabled) !important;
+      //     color: var(--chat--color-white) !important;
+      //     opacity: 0.5 !important;
+      }
           `,
         },
 
         i18n: {
           en: {
-            title: "Welcome to the International School of Tallinn!",
+            title: "Welcome to the IST! 👋",
             subtitle: "",
             getStarted: "New Conversation",
             inputPlaceholder: "Type your question..",
@@ -189,7 +269,7 @@
         // Welcome message configuration
         welcomeMessage: {
           enabled: true,
-          text: "Hi! How may I help you?",
+          text: "Hi! Welcome to IST. May I help you?",
           icon: "https://n8n.pragmatiqai.com/chat/assets/ist_chat_icon.png",
         },
 
@@ -197,8 +277,7 @@
         headerIcon: "https://n8n.pragmatiqai.com/chat/assets/ist_chat_icon.png",
 
         initialMessages: [
-          "**Hello and welcome!** I'm the fully automated **AI Assistant** for the **International School of Tallinn**, here to support you at any time.\n\nYou're welcome to ask me about:\n\n• Admissions (Preschool to Grade 12 – IB PYP, MYP, DP)\n\n• Tuition fees and available discounts\n\n• How to apply, including trial days and enrolment steps\n\n• Languages and support for international students\n\n• School calendar, meals, daily routines, and contact details\n\nIf I can't help directly, I'll make sure your question reaches the right person. \n\n Please note that for your privacy and security, we recommend avoiding the sharing of personal or confidential information through this chat.",
-          "How may I assist you today?",
+          "**Welcome to IST!**\n\nI'm the AI Chat Assistant for the International School of Tallinn, here to help you anytime. Please note that I'm still learning and getting smarter every day.\n\nYou are welcome to ask me about:\n\n• Admissions (Preschool–Grade 12, IB PYP, MYP, DP)\n\n• Tuition fees and discounts\n\n• Curriculum, school life, and school services\n\n• Practical info: calendar, meals, timetables, and contacts\n\n• Additional questions regarding the school\n\nIf I can't help directly, I'll connect you with the right person. For your privacy, please avoid sharing personal or confidential details here.\n\nHow may I assist you today?",
         ],
       });
     </script>

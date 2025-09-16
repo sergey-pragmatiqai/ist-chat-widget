@@ -54,22 +54,12 @@ function onBeforeLeave(el: Element) {
 	element.style.minWidth = computedStyle.width;
 	element.style.maxWidth = computedStyle.width;
 }
-
-function onLeave(el: Element) {
-	// Keep dimensions locked during transition
-}
-
-function onAfterLeave() {
-	// Clean up after transition
-}
 </script>
 
 <template>
 	<Transition 
 		name="welcome-message-transition"
 		@before-leave="onBeforeLeave"
-		@leave="onLeave"
-		@after-leave="onAfterLeave"
 	>
 		<div v-if="show && welcomeText" class="welcome-message">
 			<button class="welcome-message-close" @click="handleClose">×</button>
@@ -152,7 +142,6 @@ function onAfterLeave() {
 		align-items: var(--chat--welcome-message--align-items);
 		justify-content: var(--chat--welcome-message--justify-content);
 		gap: var(--chat--welcome-message--icon--gap);
-		padding-right: 1.5rem; // Space for close button
 	}
 
 	.welcome-message-icon {
@@ -185,9 +174,6 @@ function onAfterLeave() {
 		line-height: var(--chat--welcome-message--line-height);
 		font-weight: var(--chat--welcome-message--font-weight);
 		text-align: var(--chat--welcome-message--text-align);
-		white-space: pre-line;
-		word-wrap: break-word;
-		overflow-wrap: break-word;
 	}
 
 	// Responsive adjustments
