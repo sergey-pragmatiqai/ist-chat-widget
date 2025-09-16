@@ -194,6 +194,9 @@ export interface ChatTheme {
 	welcomeMessageMobileFontSize?: string;
 	welcomeMessageMobileGap?: string;
 
+	// Welcome Message Arrow
+	welcomeMessageArrowRightOffset?: string;
+
 	// Header Icon
 	headerIconSize?: string;
 	headerIconMarginRight?: string;
@@ -243,6 +246,7 @@ export interface ChatOptions {
 		enabled?: boolean;
 		text?: string;
 		icon?: string; // Emoji (e.g., '👋', '💬') or image URL/path (e.g., 'https://example.com/logo.png', '/assets/logo.svg')
+		showArrow?: boolean;
 	};
 	headerIcon?: string; // Emoji (e.g., '🤖', '💬') or image URL/path (e.g., 'https://example.com/logo.png', '/assets/logo.svg')
 }

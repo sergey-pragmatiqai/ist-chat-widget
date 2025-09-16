@@ -25,6 +25,14 @@ const welcomeIcon = computed(() => {
 	return options.welcomeMessage?.icon;
 });
 
+const showArrow = computed(() => {
+	return options.welcomeMessage?.showArrow;
+});
+
+const arrowRightOffset = computed(() => {
+	return options.theme?.welcomeMessageArrowRightOffset || '33px';
+});
+
 const isImageIcon = computed(() => {
 	const icon = welcomeIcon.value;
 	// Check if it's an image URL (http/https/data URI) or file path
@@ -75,6 +83,13 @@ function onBeforeLeave(el: Element) {
 				</div>
 				<div v-if="welcomeText" class="welcome-message-text">{{ welcomeText }}</div>
 			</div>
+			<div 
+				v-if="showArrow" 
+				class="welcome-message-arrow"
+				:style="{
+					right: arrowRightOffset
+				}"
+			></div>
 		</div>
 	</Transition>
 </template>
@@ -106,6 +121,12 @@ function onBeforeLeave(el: Element) {
 		transform: var(--chat--welcome-message--transform-hover);
 		box-shadow: var(--chat--welcome-message--box-shadow-hover);
 		border-color: var(--chat--welcome-message--border-hover);
+		
+		.welcome-message-arrow {
+			&:before {
+				border-top-color: var(--chat--welcome-message--border-hover);
+			}
+		}
 	}
 
 	.welcome-message-close {
@@ -174,6 +195,43 @@ function onBeforeLeave(el: Element) {
 		line-height: var(--chat--welcome-message--line-height);
 		font-weight: var(--chat--welcome-message--font-weight);
 		text-align: var(--chat--welcome-message--text-align);
+	}
+
+	.welcome-message-arrow {
+		position: absolute;
+		top: 100%;
+		width: 0;
+		height: 0;
+		z-index: var(--chat--welcome-message--z-index, 1000);
+		transition: all var(--chat--welcome-message--transition, 0.3s ease);
+		
+		&:after,
+		&:before {
+			top: 100%;
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+		}
+		
+		&:after {
+			border-color: rgba(255, 255, 255, 0);
+			border-top-color: var(--chat--welcome-message--background, #f8f9fa);
+			border-width: 8px;
+			left: 50%;
+			margin-left: -8px;
+		}
+		
+		&:before {
+			border-color: rgba(17, 35, 81, 0);
+			border-top-color: var(--chat--welcome-message--border, #112351);
+			border-width: 9px;
+			left: 50%;
+			margin-left: -9px;
+			transition: border-top-color 0.3s ease;
+		}
 	}
 
 	// Responsive adjustments
