@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     theme: {
       // Header Icon Customization (optional)
-      headerIconSize: "2.5rem",
+      headerIconSize: "3.5rem",
       headerIconMarginRight: "0.625rem",
       headerIconBorderRadius: "0.5rem",
 
