@@ -1,5 +1,5 @@
 import { ref as he, computed as W, nextTick as du, markRaw as g, createElementBlock as h, openBlock as d, createElementVNode as s, renderSlot as He, inject as vt, isRef as fc, defineComponent as be, createVNode as me, withCtx as Ae, createTextVNode as k0, toDisplayString as Pe, unref as N, createCommentVNode as ue, createBlock as ee, getCurrentScope as hc, onScopeDispose as pc, readonly as gc, withModifiers as yt, onMounted as Qe, onUnmounted as Et, normalizeStyle as Mt, withDirectives as At, withKeys as bc, vModelText as mc, Fragment as Tu, renderList as Ru, onBeforeUnmount as _c, createStaticVNode as je, useCssModule as Dt, resolveDynamicComponent as w0, normalizeClass as C0, mergeProps as v0, shallowRef as xc, h as kc, toRefs as wc, normalizeProps as X0, guardReactiveProps as Cc, Transition as s0, vShow as vc, watch as yc, createApp as Ec } from "vue";
-/*! Package version @n8n/chat@0.46.0 */
+/*! Package version @n8n/chat@1.0.0 */
 const nu = {
   webhookUrl: "http://localhost:5678",
   webhookConfig: {
