@@ -1,280 +1,202 @@
-# n8n Chat
-This is an embeddable Chat widget for n8n. It allows the execution of AI-Powered Workflows through a Chat window.
+# n8n Chat Widget
 
-**Windowed Example**
-![n8n Chat Windowed](https://raw.githubusercontent.com/n8n-io/n8n/master/packages/frontend/%40n8n/chat/resources/images/windowed.png)
+A standalone, embeddable chat widget built with Vue.js and TypeScript. This is a custom chat implementation based on PragmatiqAI IST chat widget that provides a modern, responsive chat interface for web applications and n8n workflows.
 
-**Fullscreen Example**
-![n8n Chat Fullscreen](https://raw.githubusercontent.com/n8n-io/n8n/master/packages/frontend/%40n8n/chat/resources/images/fullscreen.png)
+## Features
 
-## Prerequisites
-Create a n8n workflow which you want to execute via chat. The workflow has to be triggered using a **Chat Trigger** node.
+- 🎨 **Customizable UI** - Fully customizable with CSS variables and themes
+- 📱 **Responsive Design** - Works on desktop and mobile devices
+- 🌐 **Multi-language Support** - Built-in internationalization support
+- 📁 **File Upload Support** - Optional file upload capabilities
+- 🔧 **Easy Integration** - Simple CDN or npm package integration
+- ⚡ **TypeScript Support** - Full TypeScript support with type definitions
+- 🎯 **Two Display Modes** - Windowed and fullscreen modes
+- 🔌 **API Integration** - Flexible API integration for custom backends
+- 💬 **Real-time Messaging** - Support for real-time chat functionality
 
-Open the **Chat Trigger** node and add your domain to the **Allowed Origins (CORS)** field. This makes sure that only requests from your domain are accepted.
+## Quick Start
 
-[See example workflow](https://github.com/n8n-io/n8n/blob/master/packages/%40n8n/chat/resources/workflow.json)
+### Installation
 
-> Make sure the workflow is **Active.**
+#### Option 1: NPM Package (Recommended)
+```bash
+npm install @pragmatiqai/ist-chat-widget
+```
 
-### How it works
-Each Chat request is sent to the n8n Webhook endpoint, which then sends back a response.
-
-Each request is accompanied by an `action` query parameter, where `action` can be one of:
-- `loadPreviousSession` - When the user opens the Chatbot again and the previous chat session should be loaded
-- `sendMessage` - When the user sends a message
-
-## Installation
-
-Open the **Webhook** node and replace `YOUR_PRODUCTION_WEBHOOK_URL` with your production URL. This is the URL that the Chat widget will use to send requests to.
-
-### a. CDN Embed
-Add the following code to your HTML page.
-
+#### Option 2: CDN
 ```html
-<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/@pragmatiqai/ist-chat-widget@latest/dist/style.css" rel="stylesheet" />
 <script type="module">
-	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-
-	createChat({
-		webhookUrl: 'YOUR_PRODUCTION_WEBHOOK_URL'
-	});
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@pragmatiqai/ist-chat-widget@latest/dist/chat.bundle.es.js';
+  
+  createChat({
+    webhookUrl: 'YOUR_WEBHOOK_URL'
+  });
 </script>
 ```
 
-### b. Import Embed
-Install and save n8n Chat as a production dependency.
-
-```sh
-npm install @n8n/chat
+#### Option 3: Development Setup
+1. **Install dependencies:**
+```bash
+pnpm install
 ```
 
-Import the CSS and use the `createChat` function to initialize your Chat window.
-
-```ts
-import '@n8n/chat/style.css';
-import { createChat } from '@n8n/chat';
-
-createChat({
-	webhookUrl: 'YOUR_PRODUCTION_WEBHOOK_URL'
-});
+2. **Build all packages:**
+```bash
+pnpm build
 ```
 
-##### Vue.js
-
-```html
-<script lang="ts" setup>
-// App.vue
-import { onMounted } from 'vue';
-import '@n8n/chat/style.css';
-import { createChat } from '@n8n/chat';
-
-onMounted(() => {
-	createChat({
-		webhookUrl: 'YOUR_PRODUCTION_WEBHOOK_URL'
-	});
-});
-</script>
-<template>
-	<div></div>
-</template>
+3. **Start development server:**
+```bash
+pnpm dev
 ```
 
-##### React
 
-```tsx
-// App.tsx
-import { useEffect } from 'react';
-import '@n8n/chat/style.css';
-import { createChat } from '@n8n/chat';
+## Configuration Options
 
-export const App = () => {
-	useEffect(() => {
-		createChat({
-			webhookUrl: 'YOUR_PRODUCTION_WEBHOOK_URL'
-		});
-	}, []);
-
-	return (<div></div>);
-};
-```
-
-## Options
-The default options are:
+The `createChat` function accepts the following options:
 
 ```ts
 createChat({
-	webhookUrl: '',
-	webhookConfig: {
-		method: 'POST',
-		headers: {}
-	},
-	target: '#n8n-chat',
-	mode: 'window',
-	chatInputKey: 'chatInput',
-	chatSessionKey: 'sessionId',
-	loadPreviousSession: true,
-	metadata: {},
-	showWelcomeScreen: false,
-	defaultLanguage: 'en',
-	initialMessages: [
-		'Hi there! 👋',
-		'My name is Nathan. How can I assist you today?'
-	],
-	i18n: {
-		en: {
-			title: 'Hi there! 👋',
-			subtitle: "Start a chat. We're here to help you 24/7.",
-			footer: '',
-			getStarted: 'New Conversation',
-			inputPlaceholder: 'Type your question..',
-		},
-	},
+  webhookUrl: 'YOUR_WEBHOOK_URL',           // Required: Your n8n webhook URL
+  webhookConfig: {                          // Optional: HTTP config
+    method: 'POST',
+    headers: {}
+  },
+  target: '#n8n-chat',                      // Optional: CSS selector
+  mode: 'window',                           // Optional: 'window' | 'fullscreen'
+  loadPreviousSession: true,                // Optional: Load chat history
+  metadata: {},                             // Optional: Additional metadata
+  showWelcomeScreen: false,                 // Optional: Show welcome screen
+  defaultLanguage: 'en',                    // Optional: Default language
+  initialMessages: [                        // Optional: Initial messages
+    'Hi there! 👋',
+    'My name is Nathan. How can I assist you today?'
+  ],
+  allowFileUploads: false,                  // Optional: Enable file uploads
+  allowedFilesMimeTypes: '',                // Optional: Allowed file types
+  theme: {                                  // Optional: Custom theme configuration
+    primaryColor: '#112351',
+    secondaryColor: '#20b69e',
+    windowWidth: '420px',
+    windowHeight: '650px',
+    // ... more theme options available
+  },
+  i18n: {                                   // Optional: Internationalization
+    en: {
+      title: 'Hi there! 👋',
+      subtitle: "Start a chat. We're here to help you 24/7.",
+      footer: '',
+      getStarted: 'New Conversation',
+      inputPlaceholder: 'Type your question..',
+    },
+  },
 });
 ```
-
-### `webhookUrl`
-- **Type**: `string`
-- **Required**: `true`
-- **Examples**:
-	- `https://yourname.app.n8n.cloud/webhook/513107b3-6f3a-4a1e-af21-659f0ed14183`
-	- `http://localhost:5678/webhook/513107b3-6f3a-4a1e-af21-659f0ed14183`
-- **Description**: The URL of the n8n Webhook endpoint. Should be the production URL.
-
-### `webhookConfig`
-- **Type**: `{ method: string, headers: Record<string, string> }`
-- **Default**: `{ method: 'POST', headers: {} }`
-- **Description**: The configuration for the Webhook request.
-
-### `target`
-- **Type**: `string`
-- **Default**: `'#n8n-chat'`
-- **Description**: The CSS selector of the element where the Chat window should be embedded.
-
-### `mode`
-- **Type**: `'window' | 'fullscreen'`
-- **Default**: `'window'`
-- **Description**: The render mode of the Chat window.
-  - In `window` mode, the Chat window will be embedded in the target element as a chat toggle button and a fixed size chat window.
-  - In `fullscreen` mode, the Chat will take up the entire width and height of its target container.
-
-### `showWelcomeScreen`
-- **Type**: `boolean`
-- **Default**: `false`
-- **Description**: Whether to show the welcome screen when the Chat window is opened.
-
-### `chatInputKey`
-- **Type**: `string`
-- **Default**: `'chatInput'`
-- **Description**: The key to use for sending the chat input for the AI Agent node.
-
-### `chatSessionKey`
-- **Type**: `string`
-- **Default**: `'sessionId'`
-- **Description**: The key to use for sending the chat history session ID for the AI Memory node.
-
-### `loadPreviousSession`
-- **Type**: `boolean`
-- **Default**: `true`
-- **Description**: Whether to load previous messages (chat context). 
-
-### `defaultLanguage`
-- **Type**: `string`
-- **Default**: `'en'`
-- **Description**: The default language of the Chat window. Currently only `en` is supported.
-
-### `i18n`
-- **Type**: `{ [key: string]: Record<string, string> }`
-- **Description**: The i18n configuration for the Chat window. Currently only `en` is supported.
-
-### `initialMessages`
-- **Type**: `string[]`
-- **Description**: The initial messages to be displayed in the Chat window.
-
-### `allowFileUploads`
-- **Type**: `Ref<boolean> | boolean`
-- **Default**: `false`
-- **Description**: Whether to allow file uploads in the chat. If set to `true`, users will be able to upload files through the chat interface.
-
-### `allowedFilesMimeTypes`
-- **Type**: `Ref<string> | string`
-- **Default**: `''`
-- **Description**: A comma-separated list of allowed MIME types for file uploads. Only applicable if `allowFileUploads` is set to `true`. If left empty, all file types are allowed. For example: `'image/*,application/pdf'`.
 
 ## Customization
-The Chat window is entirely customizable using CSS variables.
+
+The chat component offers comprehensive customization through the `ChatTheme` type, allowing you to customize colors, layout, typography, and component-specific styling.
+
+### Theme Configuration
+
+You can customize the chat appearance by passing a `theme` object to the `createChat` function:
+
+```ts
+createChat({
+  webhookUrl: 'YOUR_WEBHOOK_URL',
+  theme: {
+    // Base Colors
+    primaryColor: '#112351',
+    secondaryColor: '#20b69e',
+    lightColor: '#f5f5f5',
+    darkColor: '#112351',
+    
+    // Layout Settings
+    borderRadius: '12px',
+    spacing: '1.2rem',
+    fontFamily: 'Georgia, "Times New Roman", Times, serif',
+    
+    // Window Dimensions
+    windowWidth: '420px',
+    windowHeight: '650px',
+    
+    // Header Styles
+    headerBackground: '#112351',
+    headerColor: '#ffffff',
+    headingFontSize: '2em',
+    
+    // Message Styles
+    messageFontSize: '16px',
+    botMessageBackground: '#ffffff',
+    botMessageColor: '#112351',
+    userMessageBackground: '#20b69e',
+    userMessageColor: '#ffffff',
+    
+    // Button Styles
+    toggleBackground: '#112351',
+    toggleHoverBackground: '#1a2d5f',
+    sendButtonBackground: '#ffffff',
+    sendButtonColor: '#112351',
+    
+    // Welcome Message
+    welcomeMessageBackground: '#f8f9fa',
+    welcomeMessageColor: '#112351',
+    welcomeMessageBorder: '1px solid #112351',
+    
+    // Custom CSS (for advanced styling)
+    customCSS: `
+      .my-custom-class {
+        /* Your custom styles */
+      }
+    `
+  }
+});
+```
+
+### Available Theme Properties
+
+The `ChatTheme` type includes over 100 customizable properties organized into categories:
+
+- **Base Colors**: Primary, secondary, light, dark, and accent colors
+- **Layout Settings**: Spacing, border radius, transitions, and typography
+- **Window Dimensions**: Width, height, positioning, and z-index
+- **Header Styles**: Background, text, borders, and icon customization
+- **Message Styles**: Font size, colors, padding, and layout for bot/user messages
+- **Button Styles**: Toggle, send, close, file, voice, and ElevenLabs buttons
+- **Welcome Message**: Complete styling for the welcome message component
+- **Custom CSS**: Raw CSS injection for advanced customization
+
+### CSS Variables (Legacy)
+
+The component also supports CSS variables for basic customization:
 
 ```css
 :root {
-	--chat--color-primary: #e74266;
-	--chat--color-primary-shade-50: #db4061;
-	--chat--color-primary-shade-100: #cf3c5c;
-	--chat--color-secondary: #20b69e;
-	--chat--color-secondary-shade-50: #1ca08a;
-	--chat--color-white: #ffffff;
-	--chat--color-light: #f2f4f8;
-	--chat--color-light-shade-50: #e6e9f1;
-	--chat--color-light-shade-100: #c2c5cc;
-	--chat--color-medium: #d2d4d9;
-	--chat--color-dark: #101330;
-	--chat--color-disabled: #777980;
-	--chat--color-typing: #404040;
-
-	--chat--spacing: 1rem;
-	--chat--border-radius: 0.25rem;
-	--chat--transition-duration: 0.15s;
-
-	--chat--window--width: 400px;
-	--chat--window--height: 600px;
-
-	--chat--header-height: auto;
-	--chat--header--padding: var(--chat--spacing);
-	--chat--header--background: var(--chat--color-dark);
-	--chat--header--color: var(--chat--color-light);
-	--chat--header--border-top: none;
-	--chat--header--border-bottom: none;
-	--chat--header--border-bottom: none;
-	--chat--header--border-bottom: none;
-	--chat--heading--font-size: 2em;
-	--chat--header--color: var(--chat--color-light);
-	--chat--subtitle--font-size: inherit;
-	--chat--subtitle--line-height: 1.8;
-
-	--chat--textarea--height: 50px;
-
-	--chat--message--font-size: 1rem;
-	--chat--message--padding: var(--chat--spacing);
-	--chat--message--border-radius: var(--chat--border-radius);
-	--chat--message-line-height: 1.8;
-	--chat--message--bot--background: var(--chat--color-white);
-	--chat--message--bot--color: var(--chat--color-dark);
-	--chat--message--bot--border: none;
-	--chat--message--user--background: var(--chat--color-secondary);
-	--chat--message--user--color: var(--chat--color-white);
-	--chat--message--user--border: none;
-	--chat--message--pre--background: rgba(0, 0, 0, 0.05);
-
-	--chat--toggle--background: var(--chat--color-primary);
-	--chat--toggle--hover--background: var(--chat--color-primary-shade-50);
-	--chat--toggle--active--background: var(--chat--color-primary-shade-100);
-	--chat--toggle--color: var(--chat--color-white);
-	--chat--toggle--size: 64px;
+  --chat--color-primary: #e74266;
+  --chat--color-secondary: #20b69e;
+  --chat--window--width: 400px;
+  --chat--window--height: 600px;
+  /* ... more variables available */
 }
 ```
 
-## Caveats
+## Published Package
 
-### Fullscreen mode
-In fullscreen mode, the Chat window will take up the entire width and height of its target container. Make sure that the container has a set width and height.
+This project builds and publishes the `@pragmatiqai/ist-chat-widget` npm package:
 
-```css
-html,
-body,
-#n8n-chat {
-	width: 100%;
-	height: 100%;
-}
-```
+- **Package Name**: `@pragmatiqai/ist-chat-widget`
+- **NPM**: [npm package](https://www.npmjs.com/package/@pragmatiqai/ist-chat-widget)
+- **CDN**: Available via jsdelivr CDN
+- **Repository**: [GitHub](https://github.com/sergey-pragmatiqai/ist-chat-widget)
+
+### CDN Links
+
+- **Latest Version**: `https://cdn.jsdelivr.net/npm/@pragmatiqai/ist-chat-widget@latest/dist/`
+- **UMD Bundle**: `https://cdn.jsdelivr.net/npm/@pragmatiqai/ist-chat-widget@latest/dist/chat.umd.js`
+- **ES Module**: `https://cdn.jsdelivr.net/npm/@pragmatiqai/ist-chat-widget@latest/dist/chat.es.js`
+- **CSS Styles**: `https://cdn.jsdelivr.net/npm/@pragmatiqai/ist-chat-widget@latest/dist/style.css`
 
 ## License
 
-You can find the license information [here](https://github.com/n8n-io/n8n/blob/master/README.md#license)
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

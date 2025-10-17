@@ -1,6 +1,6 @@
-# Custom Chat Component
+# n8n Chat Widget
 
-A standalone, embeddable chat widget built with Vue.js and TypeScript. This is a custom chat implementation that provides a modern, responsive chat interface for web applications.
+A standalone, embeddable chat widget built with Vue.js and TypeScript. This is a custom chat implementation based on PragmatiqAI IST chat widget that provides a modern, responsive chat interface for web applications and n8n workflows.
 
 ## Features
 
@@ -18,6 +18,24 @@ A standalone, embeddable chat widget built with Vue.js and TypeScript. This is a
 
 ### Installation
 
+#### Option 1: NPM Package (Recommended)
+```bash
+npm install @pragmatiqai/ist-chat-widget
+```
+
+#### Option 2: CDN
+```html
+<link href="https://cdn.jsdelivr.net/npm/@pragmatiqai/ist-chat-widget@latest/dist/style.css" rel="stylesheet" />
+<script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@pragmatiqai/ist-chat-widget@latest/dist/chat.bundle.es.js';
+  
+  createChat({
+    webhookUrl: 'YOUR_WEBHOOK_URL'
+  });
+</script>
+```
+
+#### Option 3: Development Setup
 1. **Install dependencies:**
 ```bash
 pnpm install
@@ -40,12 +58,12 @@ The `createChat` function accepts the following options:
 
 ```ts
 createChat({
-  apiUrl: 'YOUR_API_ENDPOINT',              // Required: Your API endpoint URL
-  apiConfig: {                              // Optional: HTTP config
+  webhookUrl: 'YOUR_WEBHOOK_URL',           // Required: Your n8n webhook URL
+  webhookConfig: {                          // Optional: HTTP config
     method: 'POST',
     headers: {}
   },
-  target: '#custom-chat',                   // Optional: CSS selector
+  target: '#n8n-chat',                      // Optional: CSS selector
   mode: 'window',                           // Optional: 'window' | 'fullscreen'
   loadPreviousSession: true,                // Optional: Load chat history
   metadata: {},                             // Optional: Additional metadata
@@ -53,7 +71,7 @@ createChat({
   defaultLanguage: 'en',                    // Optional: Default language
   initialMessages: [                        // Optional: Initial messages
     'Hi there! 👋',
-    'How can I help you today?'
+    'My name is Nathan. How can I assist you today?'
   ],
   allowFileUploads: false,                  // Optional: Enable file uploads
   allowedFilesMimeTypes: '',                // Optional: Allowed file types
@@ -70,7 +88,7 @@ createChat({
       subtitle: "Start a chat. We're here to help you 24/7.",
       footer: '',
       getStarted: 'New Conversation',
-      inputPlaceholder: 'Type your message...',
+      inputPlaceholder: 'Type your question..',
     },
   },
 });
@@ -86,7 +104,7 @@ You can customize the chat appearance by passing a `theme` object to the `create
 
 ```ts
 createChat({
-  apiUrl: 'YOUR_API_ENDPOINT',
+  webhookUrl: 'YOUR_WEBHOOK_URL',
   theme: {
     // Base Colors
     primaryColor: '#112351',
@@ -163,20 +181,36 @@ The component also supports CSS variables for basic customization:
 }
 ```
 
+## Published Package
+
+This project builds and publishes the `@pragmatiqai/ist-chat-widget` npm package:
+
+- **Package Name**: `@pragmatiqai/ist-chat-widget`
+- **NPM**: [npm package](https://www.npmjs.com/package/@pragmatiqai/ist-chat-widget)
+- **CDN**: Available via jsdelivr CDN
+- **Repository**: [GitHub](https://github.com/sergey-pragmatiqai/ist-chat-widget)
+
+### CDN Links
+
+- **Latest Version**: `https://cdn.jsdelivr.net/npm/@pragmatiqai/ist-chat-widget@latest/dist/`
+- **UMD Bundle**: `https://cdn.jsdelivr.net/npm/@pragmatiqai/ist-chat-widget@latest/dist/chat.umd.js`
+- **ES Module**: `https://cdn.jsdelivr.net/npm/@pragmatiqai/ist-chat-widget@latest/dist/chat.es.js`
+- **CSS Styles**: `https://cdn.jsdelivr.net/npm/@pragmatiqai/ist-chat-widget@latest/dist/style.css`
+
 ## Project Structure
 
 ```
 packages/
 └── frontend/
     └── @n8n/
-        └── chat/                    # Main chat component
+        └── chat/                    # Main chat component (published to npm)
             ├── src/
             │   ├── components/      # Vue components
             │   ├── composables/     # Vue composables
             │   ├── types/          # TypeScript types
             │   ├── utils/          # Utility functions
             │   └── api/            # API layer
-            ├── dist/               # Built files
+            ├── dist/               # Built files (published to npm)
             └── resources/          # Example assets and configurations
 ```
 
@@ -231,6 +265,40 @@ The main chat component is located in `packages/frontend/@n8n/chat/` and include
 ## Building
 
 Run `pnpm build` to build all packages. The built files will be available in each package's `dist/` directory and can be used for production deployments.
+
+## Publishing
+
+To publish the chat widget to npm:
+
+1. **Navigate to the chat package directory:**
+```bash
+cd packages/frontend/@n8n/chat
+```
+
+2. **Login to npm (if not already logged in):**
+```bash
+npm login
+```
+
+3. **Build the package:**
+```bash
+pnpm run build
+```
+
+4. **Publish to npm:**
+```bash
+# Publish current version
+pnpm run publish:npm
+
+# Or publish with version bump
+pnpm run publish:patch    # 1.0.0 → 1.0.1
+pnpm run publish:minor    # 1.0.0 → 1.1.0  
+pnpm run publish:major    # 1.0.0 → 2.0.0
+```
+
+The package will be available at:
+- **NPM**: `https://www.npmjs.com/package/@pragmatiqai/ist-chat-widget`
+- **CDN**: `https://cdn.jsdelivr.net/npm/@pragmatiqai/ist-chat-widget@latest/dist/`
 
 ## License
 

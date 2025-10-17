@@ -1,0 +1,36 @@
+# Source files
+src/
+__stories__/
+__tests__/
+.storybook/
+
+# Development files
+*.config.*
+*.log
+vite.config.*
+vite.dev.config.*
+tsconfig.json
+eslint.config.*
+
+# Dependencies
+node_modules/
+
+# Development assets
+public/
+resources/
+index.html
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Build artifacts (keep only dist)
+# dist/ is included via package.json "files" field

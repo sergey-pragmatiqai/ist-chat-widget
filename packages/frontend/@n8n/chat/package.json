@@ -29,7 +29,12 @@
     "format": "biome format --write src .storybook && prettier --write src/ --ignore-path ../../../../.prettierignore",
     "format:check": "biome ci src .storybook && prettier --check src/ --ignore-path ../../../../.prettierignore",
     "storybook": "storybook dev -p 6006 --no-open",
-    "build:storybook": "storybook build"
+    "build:storybook": "storybook build",
+    "prepublishOnly": "pnpm run build",
+    "publish:npm": "npm publish --access public",
+    "publish:patch": "npm version patch && npm publish --access public",
+    "publish:minor": "npm version minor && npm publish --access public",
+    "publish:major": "npm version major && npm publish --access public"
   },
   "types": "./dist/index.d.ts",
   "main": "./dist/chat.umd.js",
