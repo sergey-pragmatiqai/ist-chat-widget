@@ -1,6 +1,19 @@
 {
-  "name": "@n8n/chat",
+  "name": "@pragmatiqai/ist-chat-widget",
   "version": "0.46.0",
+  "description": "A customizable chat widget for n8n workflows based on PragmatiqAI IST chat widget",
+  "keywords": ["n8n", "chat", "widget", "vue", "typescript", "pragmatiqai", "ist", "chat-widget"],
+  "author": "PragmatiqAI",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sergey-pragmatiqai/ist-chat-widget.git",
+    "directory": "packages/frontend/@n8n/chat"
+  },
+  "homepage": "https://github.com/sergey-pragmatiqai/ist-chat-widget#readme",
+  "bugs": {
+    "url": "https://github.com/sergey-pragmatiqai/ist-chat-widget/issues"
+  },
   "scripts": {
     "dev": "vite dev --config vite.dev.config.ts",
     "dev:storybook": "pnpm run storybook",
