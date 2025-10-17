@@ -3,7 +3,7 @@ import { createChat } from "./index";
 
 // Development configuration
 const webhookUrl =
-  "https://n8n.pragmatiqai.com/webhook/4070057c-7bf6-4dc4-8c1a-784cba72a92a/chat";
+  "https://n8n-prod.pragmatiqai.com/webhook/4070057c-7bf6-4dc4-8c1a-784cba72a92a/chat";
 
 // Create the chat widget when the page loads
 document.addEventListener("DOMContentLoaded", () => {
@@ -266,12 +266,12 @@ document.addEventListener("DOMContentLoaded", () => {
     welcomeMessage: {
       enabled: true,
       text: "Welcome, how may I help you?",
-      icon: "https://n8n.pragmatiqai.com/chat/assets/ist_chat_icon.png",
+      icon: "https://cdn.jsdelivr.net/npm/@pragmatiqai/ist-chat-widget@latest/dist/assets/ist_chat_icon.png",
       showArrow: true,
     },
 
     // Header icon
-    headerIcon: "https://n8n.pragmatiqai.com/chat/assets/ist_chat_icon.png",
+    headerIcon: "https://cdn.jsdelivr.net/npm/@pragmatiqai/ist-chat-widget@latest/dist/assets/ist_chat_icon.png",
 
     initialMessages: [
       "I'm the 𝐀𝐈 𝐂𝐡𝐚𝐭 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭 for the International School of Tallinn, here to help you anytime. Please note that I'm still learning and getting smarter every day 🙂 \n\n𝐘𝐨𝐮 𝐚𝐫𝐞 𝐰𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐚𝐬𝐤 𝐦𝐞 𝐚𝐛𝐨𝐮𝐭:  \n • Admissions (Preschool–Grade 12, IB PYP, MYP, DP)  \n • Tuition fees and discounts  \n • Curriculum, school life, and school services  \n • Practical info: calendar, meals, timetables, and contacts  \n • Additional questions regarding the school\n\nIf I can't help directly, I'll connect you with the right person. \n\nFor your privacy, please avoid sharing personal or confidential details here.\n\n𝐇𝐨𝐰 𝐦𝐚𝐲 𝐈 𝐚𝐬𝐬𝐢𝐬𝐭 𝐲𝐨𝐮?",
