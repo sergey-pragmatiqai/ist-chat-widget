@@ -1,4 +1,4 @@
-(function(Dn,bn){typeof exports=="object"&&typeof module<"u"?bn(exports):typeof define=="function"&&define.amd?define(["exports"],bn):(Dn=typeof globalThis<"u"?globalThis:Dn||self,bn(Dn.N8nChat={}))})(this,function(Dn){"use strict";/*! Package version @n8n/chat@1.0.0 *//**
+(function(Dn,bn){typeof exports=="object"&&typeof module<"u"?bn(exports):typeof define=="function"&&define.amd?define(["exports"],bn):(Dn=typeof globalThis<"u"?globalThis:Dn||self,bn(Dn.N8nChat={}))})(this,function(Dn){"use strict";/*! Package version @n8n/chat@1.0.1 *//**
 * @vue/shared v3.5.21
 * (c) 2018-present Yuxi (Evan) You and Vue contributors
 * @license MIT

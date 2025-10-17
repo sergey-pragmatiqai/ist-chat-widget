@@ -1,4 +1,4 @@
-/*! Package version @n8n/chat@1.0.0 */
+/*! Package version @n8n/chat@1.0.1 */
 /**
 * @vue/shared v3.5.21
 * (c) 2018-present Yuxi (Evan) You and Vue contributors
