@@ -1,6 +1,6 @@
-import { defineConfig, mergeConfig, PluginOption } from 'vite';
+import { defineConfig } from 'vite';
 import { resolve } from 'path';
-import { renameSync, writeFileSync, readFileSync } from 'fs';
+import { renameSync, writeFileSync, readFileSync, copyFileSync, mkdirSync } from 'fs';
 import vue from '@vitejs/plugin-vue';
 import icons from 'unplugin-icons/vite';
 import dts from 'vite-plugin-dts';
@@ -10,7 +10,6 @@ import components from 'unplugin-vue-components/vite';
 
 const includeVue = process.env.INCLUDE_VUE === 'true';
 const srcPath = resolve(__dirname, 'src');
-const packagesDir = resolve(__dirname, '..', '..', '..');
 
 const banner = `/*! Package version @n8n/chat@${pkg.version} */`;
 
@@ -56,6 +55,25 @@ export default defineConfig({
 						writeFileSync(cssPath, updatedCssContent, 'utf-8');
 					} catch (error) {
 						console.error('Failed to inject build version into CSS file:', error);
+					}
+				},
+			},
+			{
+				name: 'copy-assets',
+				closeBundle() {
+					const assetsDir = resolve(__dirname, 'dist', 'assets');
+					const sourceIconPath = resolve(__dirname, 'resources', 'assets', 'ist_chat_icon.png');
+					const destIconPath = resolve(assetsDir, 'ist_chat_icon.png');
+					
+					try {
+						// Create assets directory if it doesn't exist
+						mkdirSync(assetsDir, { recursive: true });
+						
+						// Copy the icon file
+						copyFileSync(sourceIconPath, destIconPath);
+						console.log('Copied ist_chat_icon.png to dist/assets/');
+					} catch (error) {
+						console.error('Failed to copy ist_chat_icon.png to dist/assets:', error);
 					}
 				},
 			},
@@ -112,8 +130,4 @@ export default defineConfig({
 				'Access-Control-Allow-Headers': 'Content-Type, Authorization',
 			},
 		},
-	test: {
-		globals: true,
-		environment: 'happy-dom',
-	},
 });
