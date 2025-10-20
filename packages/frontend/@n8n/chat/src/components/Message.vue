@@ -136,16 +136,16 @@ onMounted(async () => {
 	font-size: var(--chat--message--font-size);
 	padding: var(--chat--message--padding);
 	border-radius: var(--chat--message--border-radius);
-	scroll-margin: 3rem;
+    scroll-margin: 48px;
 
 	.chat-message-actions {
 		position: absolute;
-		bottom: calc(100% - 0.5rem);
+    bottom: calc(100% - 8px);
 		left: 0;
 		opacity: 0;
-		transform: translateY(-0.25rem);
+    transform: translateY(-4px);
 		display: flex;
-		gap: 1rem;
+    gap: 16px;
 	}
 
 	&.chat-message-from-user .chat-message-actions {
@@ -221,8 +221,8 @@ onMounted(async () => {
 	.chat-message-files {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.25rem;
-		padding-top: 0.5rem;
+    gap: 4px;
+    padding-top: 8px;
 	}
 }
 </style>

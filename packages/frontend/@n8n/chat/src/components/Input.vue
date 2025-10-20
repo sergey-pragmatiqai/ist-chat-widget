@@ -188,7 +188,7 @@ function adjustTextAreaHeight() {
 	// Set to content minimum to get the right scrollHeight
 	textarea.style.height = 'var(--chat--textarea--height)';
 	// Get the new height, with a small buffer for padding
-	const newHeight = Math.min(textarea.scrollHeight, 480); // 30rem
+    const newHeight = Math.min(textarea.scrollHeight, 480);
 	textarea.style.height = `${newHeight}px`;
 }
 </script>
@@ -268,9 +268,9 @@ function adjustTextAreaHeight() {
 		border: var(--chat--input--border, 0);
 		border-radius: var(--chat--input--border-radius);
 		padding: var(--chat--input--padding);
-		min-height: var(--chat--textarea--height, 2.5rem); // Set a smaller initial height
+        min-height: var(--chat--textarea--height, 40px);
 		max-height: var(--chat--textarea--max-height);
-		height: var(--chat--textarea--height, 2.5rem); // Set initial height same as min-height
+        height: var(--chat--textarea--height, 40px);
 		resize: none;
 		overflow-y: auto;
 		background: var(--chat--input--background, white);
@@ -341,12 +341,12 @@ function adjustTextAreaHeight() {
 	width: 100%;
 	flex-direction: row;
 	flex-wrap: wrap;
-	gap: 0.5rem;
+  gap: 8px;
 	padding: var(--chat--files-spacing);
 }
 
 .chat-input-left-panel {
 	width: var(--chat--input--left--panel--width);
-	margin-left: 0.4rem;
+  margin-left: 6px;
 }
 </style>

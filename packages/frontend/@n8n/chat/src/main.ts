@@ -24,9 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     theme: {
       // Header Icon Customization (optional)
-      headerIconSize: "3.5rem",
-      headerIconMarginRight: "0.625rem",
-      headerIconBorderRadius: "0.5rem",
+      headerIconSize: "56px",
+      headerIconMarginRight: "10px",
+      headerIconBorderRadius: "8px",
 
       //ElevenLabs Button
       elevenLabsButtonBackground: "#112351",
@@ -34,14 +34,14 @@ document.addEventListener("DOMContentLoaded", () => {
       elevenLabsButtonBackgroundHover: "#0f1f47",
       elevenLabsButtonColorHover: "#ffffff",
       elevenLabsButtonBackgroundDisabled: "#9ca3af",
-      elevenLabsButtonBorderRadius: "0.5rem",
+      elevenLabsButtonBorderRadius: "8px",
       elevenLabsButtonFocusColor: "#112351",
 
       //Close Button
       closeButtonColor: "#ffffff",
-      closeButtonBorderRadius: "0.5rem",
-      closeButtonPadding: "0.375rem",
-      closeButtonIconSize: "1.125rem",
+      closeButtonBorderRadius: "8px",
+      closeButtonPadding: "6px",
+      closeButtonIconSize: "18px",
       closeButtonPosition: "static",
       closeButtonTop: "auto",
       closeButtonRight: "auto",
@@ -53,21 +53,21 @@ document.addEventListener("DOMContentLoaded", () => {
       welcomeMessageBackground: "#f8f9fa",
       welcomeMessageColor: "#112351",
       welcomeMessageBorder: "1px solid #112351",
-      welcomeMessageBorderRadius: "1rem",
-      welcomeMessageFontSize: "0.9375rem",
+      welcomeMessageBorderRadius: "16px",
+      welcomeMessageFontSize: "15px",
       welcomeMessageCloseColorHover: "#112351",
-      welcomeMessageCloseBorderRadius: "1rem",
+      welcomeMessageCloseBorderRadius: "16px",
       welcomeMessageCloseTransition: "all 0.3s ease",
-      welcomeMessageCloseFocusShadow: "0 0 0 0.125rem #112351",
-      welcomeMessageIconSize: "3.75rem",
-      welcomeMessageIconGap: "1rem",
-      welcomeMessageMaxWidth: "7.5rem",
+      welcomeMessageCloseFocusShadow: "0 0 0 2px #112351",
+      welcomeMessageIconSize: "60px",
+      welcomeMessageIconGap: "16px",
+      welcomeMessageMaxWidth: "120px",
 
       // Welcome Message Arrow
-      welcomeMessageArrowRightOffset: "1.875rem",
+      welcomeMessageArrowRightOffset: "30px",
 
-      windowBottom: "2rem",
-      windowRight: "2rem",
+      windowBottom: "32px",
+      windowRight: "32px",
       windowZIndex: "999",
       customCSS: `          
         :root {
@@ -87,31 +87,31 @@ document.addEventListener("DOMContentLoaded", () => {
         --chat--color-typing: #112351;                     /* IST Velvet Blue */
         
         /* Layout */
-        --chat--spacing: 1.08rem;
-        --chat--border-radius: 0.75rem;
+        --chat--spacing: 17px;
+        --chat--border-radius: 12px;
         --chat--transition-duration: 0.3s;
-        --chat--window--width: 26.25rem;
-        --chat--window--height: 40.625rem;
+        --chat--window--width: 420px;
+        --chat--window--height: 650px;
         
         /* Header */
-        --chat--header-height: 2.1875rem;
+        --chat--header-height: 35px;
         --chat--header--padding: var(--chat--spacing);
         --chat--header--background: var(--chat--color-dark);
         --chat--header--color: var(--chat--color-secondary);   
         --chat--header--border-top: none;
-        --chat--header--border-bottom: 0.125rem solid var(--chat--color-secondary);
-        --chat--heading--font-size: 1.25rem;
+        --chat--header--border-bottom: 2px solid var(--chat--color-secondary);
+        --chat--heading--font-size: 20px;
         --chat--header--color: var(--chat--color-secondary);
-        --chat--subtitle--font-size: 0.9em;
+        --chat--subtitle--font-size: 14px;
         --chat--subtitle--line-height: 1.6;
         
         /* Input */
-        --chat--textarea--height: 3.75rem;
+        --chat--textarea--height: 60px;
         
         /* Messages */
-        --chat--message--font-size: 0.875rem;
+        --chat--message--font-size: 14px;
         --chat--message--padding: var(--chat--spacing);
-        --chat--message--border-radius: 0.625rem;
+        --chat--message--border-radius: 10px;
         --chat--message-line-height: 1.5;
         --chat--message--bot--background: var(--chat--color-light);
         --chat--message--bot--color: var(--chat--color-dark);
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
         --chat--toggle--hover--background: #ff6600;                /* Orange instead of white */
         --chat--toggle--active--background: var(--chat--color-secondary-shade-50);
         --chat--toggle--color: var(--chat--color-secondary);
-        --chat--toggle--size: 3.75rem;
+        --chat--toggle--size: 60px;
     }
     
     /* Custom Font Styles */

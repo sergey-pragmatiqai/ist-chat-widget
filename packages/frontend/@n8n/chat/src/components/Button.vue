@@ -13,7 +13,7 @@
 	background-color: var(--chat--button--background);
 	border: 1px solid transparent;
 	padding: var(--chat--button--padding);
-	font-size: 1rem;
+	font-size: 16px;
 	line-height: 1.5;
 	border-radius: var(--chat--button--border-radius);
 	transition:
@@ -31,7 +31,7 @@
 
 	&:focus {
 		outline: 0;
-		box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+		box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
 	}
 
 	&:disabled {

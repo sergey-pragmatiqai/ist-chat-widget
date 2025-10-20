@@ -56,11 +56,11 @@ function onDelete() {
 	align-items: center;
 	flex-wrap: nowrap;
 	width: fit-content;
-	max-width: 15rem;
-	padding: 0.5rem;
-	border-radius: 0.25rem;
-	gap: 0.25rem;
-	font-size: 0.75rem;
+	max-width: 240px;
+	padding: 8px;
+	border-radius: 4px;
+	gap: 4px;
+	font-size: 12px;
 	background: white;
 	color: var(--chat--color-dark);
 	border: 1px solid var(--chat--color-dark);

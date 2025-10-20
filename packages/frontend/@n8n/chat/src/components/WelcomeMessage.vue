@@ -129,8 +129,8 @@ function onBeforeLeave(el: Element) {
 
   .welcome-message-close {
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
+    top: 8px;
+    right: 8px;
     background: var(--chat--welcome-message--close--background);
     border: none;
     font-size: var(--chat--welcome-message--close--font-size);
@@ -271,7 +271,7 @@ function onBeforeLeave(el: Element) {
     overflow: visible;
   }
   &-enter-from {
-    transform: translateY(0.5rem) scale(0.95);
+    transform: translateY(8px) scale(0.95);
     opacity: 0;
   }
 

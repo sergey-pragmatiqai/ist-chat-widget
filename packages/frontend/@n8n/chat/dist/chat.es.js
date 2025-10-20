@@ -2484,7 +2484,7 @@ const P2 = g({ name: "mdi-openInNew", render: H2 }), j2 = { class: "chat-file-na
       })) : ue("", !0)
     ]));
   }
-}), zt = /* @__PURE__ */ eu(U2, [["__scopeId", "data-v-e0d57af7"]]), q2 = {
+}), zt = /* @__PURE__ */ eu(U2, [["__scopeId", "data-v-094335ce"]]), q2 = {
   viewBox: "0 0 24 24",
   width: "1.2em",
   height: "1.2em"
@@ -2684,7 +2684,7 @@ const Z2 = g({ name: "mdi-microphone", render: V2 }), G2 = ["disabled", "title"]
       ], 36);
     };
   }
-}), rs = /* @__PURE__ */ eu(ns, [["__scopeId", "data-v-d2d28381"]]), os = { class: "chat-layout" }, is = {
+}), rs = /* @__PURE__ */ eu(ns, [["__scopeId", "data-v-b58b63af"]]), os = { class: "chat-layout" }, is = {
   key: 0,
   class: "chat-header"
 }, cs = {

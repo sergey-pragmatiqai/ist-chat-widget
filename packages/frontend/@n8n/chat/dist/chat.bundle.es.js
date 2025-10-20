@@ -6862,7 +6862,7 @@ const Gh = w({ name: "mdi-openInNew", render: Wh }), Kh = { class: "chat-file-na
       })) : $e("", !0)
     ]));
   }
-}), ec = /* @__PURE__ */ Mn(Jh, [["__scopeId", "data-v-e0d57af7"]]), Xh = {
+}), ec = /* @__PURE__ */ Mn(Jh, [["__scopeId", "data-v-094335ce"]]), Xh = {
   viewBox: "0 0 24 24",
   width: "1.2em",
   height: "1.2em"
@@ -7062,7 +7062,7 @@ const Qh = w({ name: "mdi-microphone", render: Yh }), e3 = ["disabled", "title"]
       ], 36);
     };
   }
-}), d3 = /* @__PURE__ */ Mn(a3, [["__scopeId", "data-v-d2d28381"]]), f3 = { class: "chat-layout" }, h3 = {
+}), d3 = /* @__PURE__ */ Mn(a3, [["__scopeId", "data-v-b58b63af"]]), f3 = { class: "chat-layout" }, h3 = {
   key: 0,
   class: "chat-header"
 }, p3 = {
