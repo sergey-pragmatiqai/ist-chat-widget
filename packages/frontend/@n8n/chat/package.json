@@ -1,6 +1,6 @@
 {
   "name": "@pragmatiqai/ist-chat-widget",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A customizable chat widget for n8n workflows based on PragmatiqAI IST chat widget",
   "keywords": [
     "n8n",

@@ -21,6 +21,22 @@
     },
     "clean": {
       "cache": false
+    },
+    "publish:npm": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "publish:patch": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "publish:minor": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "publish:major": {
+      "dependsOn": ["^build"],
+      "cache": false
     }
   }
 }
